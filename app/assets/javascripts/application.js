@@ -25,14 +25,18 @@ $(document).ready(function () {
   initLazyload()
   initAlerts()
   initGraphs()
+  initModals()
 
   bindEvents()
-
-  $freeStuffModal = $("#free-stuff-modal")
-  if($freeStuffModal.length) {
-    $freeStuffModal.modal('show')
-  }
 })
+
+function initModals () {
+  var freeStuffModal = $("#free-stuff-modal")
+
+  if (freeStuffModal.length) {
+    freeStuffModal.modal('show')
+  }
+}
 
 function initAlerts () {
   setTimeout(function () {
