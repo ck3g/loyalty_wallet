@@ -6,4 +6,9 @@
     @extend .panel-default;
     padding: 15px;
   }
+
+  &__panel--highlight {
+    box-shadow: 0 0 5px rgba(92, 184, 92, 1);
+    border: 1px solid rgba(92, 184, 92, 1);
+  }
 }

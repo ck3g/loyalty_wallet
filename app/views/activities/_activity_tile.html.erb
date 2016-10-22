@@ -1,5 +1,5 @@
 <div class="user-activity">
-  <div class="user-activity__panel">
+  <div class="user-activity__panel user-activity__panel--<%= current_count == Stamp::PRIZE_STAMP_COUNT ? "highlight" : "default" %>">
     <div class="row">
       <div class="col-xs-10 col-md-10 col-lg-10">
         <h4 class="text-left"><%= title %></h4>
@@ -10,7 +10,7 @@
     </div>
     <div class="user-stamp">
       <% Stamp::PRIZE_STAMP_COUNT.times do |i| %>
-        <span class="user-stamp__item user-stamp__item--<%= current_count > i+2 ? "success" : "default" %>"></span>
+        <span class="user-stamp__item user-stamp__item--<%= current_count > i ? "success" : "default" %>"></span>
       <% end %>
     </div>
     <div class="text-muted text-right">
