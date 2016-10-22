@@ -10,7 +10,7 @@ class UserDashboard
   end
 
   def qr_code
-    RQRCode::QRCode.new(qr_code_uri, size: 4, level: :h)
+    RQRCode::QRCode.new(qr_code_uri, size: 10, level: :h)
   end
 
   def view_name
