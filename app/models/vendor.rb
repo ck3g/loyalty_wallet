@@ -4,7 +4,7 @@ class Vendor < ApplicationRecord
 
   validates :user, :name, presence: true
 
-  def total_stamps_count(user)
-    stamps.where(user: user).count
+  def total_stamps_count(user, till_date: DateTime.current)
+    stamps.where(user: user).where("stamps.created_at <= ?", till_date).count
   end
 end

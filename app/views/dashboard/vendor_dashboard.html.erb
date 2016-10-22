@@ -9,7 +9,7 @@
         <%=
           render 'activities/activity_tile',
             title: "Customer##{activity.user_id}",
-            current_count: current_stamps_count(current_vendor.total_stamps_count(activity.user)),
+            current_count: current_stamps_count(current_vendor.total_stamps_count(activity.user, till_date: activity.created_at)),
             date: "#{time_ago_in_words(activity.created_at)} ago"
         %>
       <% end %>

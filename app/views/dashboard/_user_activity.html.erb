@@ -3,7 +3,7 @@
     <%=
       render 'activities/activity_tile',
         title: activity.vendor_name,
-        current_count: current_stamps_count(activity.total_vendor_stamps),
+        current_count: current_stamps_count(activity.total_vendor_stamps(till_date: activity.created_at)),
         date: "#{time_ago_in_words(activity.created_at)} ago"
     %>
   <% end %>

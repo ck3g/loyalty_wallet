@@ -8,7 +8,7 @@ class Stamp < ApplicationRecord
 
   delegate :name, to: :vendor, prefix: true
 
-  def total_vendor_stamps
-    vendor.total_stamps_count(user)
+  def total_vendor_stamps(till_date: DateTime.current)
+    vendor.total_stamps_count(user, till_date: till_date)
   end
 end
