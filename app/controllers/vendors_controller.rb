@@ -1,7 +1,4 @@
-class VendorsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :ensure_user_is_a_vendor
-
+class VendorsController < VendorApplicationController
   def edit
   end
 
