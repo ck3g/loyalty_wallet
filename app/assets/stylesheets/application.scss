@@ -51,7 +51,7 @@ p {
   margin-bottom: 20px;
 }
 section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 aside {
   padding: 50px 0;
@@ -368,6 +368,50 @@ header {
 }
 
 // ------------------- content
+
+.landing-main {
+  padding: 20px 0;
+}
 .content {
-  @extend .row;
+  padding: 30px 0;
+}
+
+.section {
+  &--benefits {
+    padding: 0 50px;
+  }
+
+  &--howitworks {
+    padding: 50px;
+    margin-top: 50px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__items {
+    @extend .row;
+  }
+
+  &__item {
+    @extend .col-lg-4;
+  }
+
+  &__item-title {
+    text-transform: uppercase;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__button-container {
+    text-align: center;
+    margin-top: 40px;
+  }
+}
+
+.section--howitworks {
+  background-color: #f5f5f5;
 }
