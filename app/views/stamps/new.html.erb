@@ -1,0 +1,7 @@
+<h1>Put the Stamp</h1>
+
+<%= simple_form_for @stamp, html: { class: "form-horizontal", role: "form" } do |f| %>
+  <%= f.input :user_id, as: :text %>
+  <%= f.button :submit, "Put it", class: "btn btn-primary" %>
+  <%= link_to "Cancel", :back, class: "btn btn-link", data: { disable_with: "..." } %>
+<% end %>
