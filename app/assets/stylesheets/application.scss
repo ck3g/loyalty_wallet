@@ -6,6 +6,7 @@ $color-dark-blue: #1f9dea;
 $color-super-dark-blue: #3769cc;
 $color-white: white;
 $color-dark-white: #eee;
+$color-black: #000;
 
 
 html, body {
@@ -15,8 +16,8 @@ html, body {
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
-.container {
-  margin-top: 60px;
+.page-container {
+  padding-top: 60px;
 }
 a {
   transition: all 0.35s;
@@ -198,6 +199,19 @@ header {
   }
 }
 
+.btn-cta-success {
+  @extend %cool-btn;
+
+  background: transparent;
+  border: 1px solid #eee;
+  color: $color-black;
+
+  &:hover, &:focus {
+    background: transparent;
+    color: $color-black;
+  }
+}
+
 // ------------ QR Code Styles
 .qr-code {
   table {
@@ -281,15 +295,11 @@ header {
 }
 
 @media (min-width: 480px) {
-  .signup__block {
-    width: 400px;
-  }
+  .signup__block { width: 400px; }
 }
 
 @media (min-width: 768px) {
-  .signup__block {
-    width: 500px;
-  }
+  .signup__block { width: 500px; }
 }
 
 
@@ -301,4 +311,33 @@ header {
   width: 100%;
   z-index: 100;
   border-radius: 0;
+}
+
+// -------------- dashboard
+.dashboard {
+  width: 320px;
+  margin-top: 10px;
+
+  &__nav {
+    @extend .nav;
+    @extend .nav-pills;
+
+    & > li > a {
+      border-radius: 0;
+    }
+    & > li.active > a {
+      background-color: $color-blue;
+      &:hover {
+        background-color: $color-dark-blue;
+      }
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  .dashboard { width: 400px; }
+}
+
+@media (min-width: 768px) {
+  .dashboard { width: 500px; }
 }
