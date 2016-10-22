@@ -15,7 +15,7 @@ class StampsController < ApplicationController
   def create_from_link
     if user = User.find_by(id: params[:user_id])
       stamp = current_vendor.stamps.create user: user
-      redirect_to dashboard_path, notice: t("stamps.successfully_created", user_id: stamp.user_id)
+      handle_successful_visit(stamp)
     else
       redirect_to dashboard_path, alert: t("stamp.failure")
     end
@@ -24,7 +24,7 @@ class StampsController < ApplicationController
   def create_from_form
     @stamp = current_vendor.stamps.new stamps_params
     if @stamp.save
-      redirect_to dashboard_path, notice: t("stamps.successfully_created", user_id: @stamp.user_id)
+      handle_successful_visit(@stamp)
     else
       render :new
     end
@@ -39,4 +39,13 @@ class StampsController < ApplicationController
     params.require(:stamp).permit(:user_id)
   end
 
+  def handle_successful_visit(stamp)
+    flash[:notice] = t("stamps.successfully_created", user_id: stamp.user_id)
+    flash[:free_stuff] = true if show_free_stuff_modal?(stamp)
+    redirect_to dashboard_path
+  end
+
+  def show_free_stuff_modal?(stamp)
+    CurrentCountCalculator.new(stamp.total_vendor_stamps).calculate == Stamp::PRIZE_STAMP_COUNT
+  end
 end

@@ -11,6 +11,8 @@
   </head>
 
   <body id="page-top">
+    <%= render 'stamps/free_stuff_modal' if flash[:free_stuff] %>
+
     <%= render "shared/nav" %>
     <%= render 'shared/alerts' %>
 

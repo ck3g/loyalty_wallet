@@ -7,7 +7,7 @@
     <div class="dashboard__manual-id">
       <%= simple_form_for @stamp, html: { role: "form" } do |f| %>
         <div class="col-xs-12 col-md-12 col-lg-12">
-          <%= f.input :user_id, as: :string, label: false, placeholder: "User ID", input_html: { class: "dashboard__input" } %>
+          <%= f.input :user_id, as: :string, label: false, placeholder: "User ID", input_html: { class: "dashboard__input" }, autofocus: true %>
         </div>
         <div class="col-xs-6 col-md-6 col-lg-6">
           <%= link_to "Cancel", :back, class: "btn btn-lg btn-link btn-block", data: { disable_with: "..." } %>

@@ -24,6 +24,11 @@ $(document).ready(function () {
   initAlerts()
 
   bindEvents()
+
+  $freeStuffModal = $("#free-stuff-modal")
+  if($freeStuffModal.length) {
+    $freeStuffModal.modal('show')
+  }
 })
 
 function initAlerts () {
