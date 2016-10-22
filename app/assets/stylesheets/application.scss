@@ -405,22 +405,25 @@ header {
 .landing-main {
   padding: 20px 0;
 }
+
 .content {
-  padding: 30px 0;
+  padding: 10px 0;
 }
 
 .section {
   &--benefits {
-    padding: 0 50px;
+    padding: 0 10px;
   }
 
   &--howitworks {
-    padding: 50px;
-    margin-top: 50px;
+    padding: 10px;
+    margin-top: 10px;
   }
 
   &__title {
-    margin-bottom: 50px;
+    font-size: 24px;
+    margin: 10px 0 30px;
+    text-align: center;
   }
 
   &__items {
@@ -429,6 +432,7 @@ header {
 
   &__item {
     @extend .col-lg-4;
+    margin-bottom: 20px;
   }
 
   &__item-title {
@@ -461,4 +465,44 @@ header {
 
 .section--howitworks {
   background-color: #f5f5f5;
+}
+
+@media (min-width: 480px) {
+  .content {
+    padding: 20px 0;
+  }
+
+  .section--benefits {
+    padding: 0 20px;
+  }
+
+  .section--howitworks {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .section__title {
+    font-size: 30px;
+    margin: 20px 0 50px;
+    text-align: left;
+  }
+
+  .section__item {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 30px 0;
+  }
+
+  .section--benefits {
+    padding: 0 50px;
+  }
+
+  .section--howitworks {
+    padding: 50px;
+    margin-top: 50px;
+  }
 }
