@@ -10,26 +10,24 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to "Log Out", destroy_user_session_path, class: "page-scroll" %>
-          </li>
+          <%= link_to_nav "Dashboard", dashboard_path %>
+          <%= link_to_nav "Profile", edit_user_registration_path %>
+          <%= link_to_nav "Log Out", destroy_user_session_path %>
         </ul>
       <% else %>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Up <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li>
+              <li class="<%= "active" if current_page?(new_user_registration_path) && params[:type] == "Vendor" %>">
                 <%= link_to "Businesses", new_user_registration_path(type: "Vendor"), class: "dropdown-item" %>
               </li>
-              <li>
+              <li class="<%= "active" if current_page?(new_user_registration_path) && params[:type] != "Vendor" %>">
                 <%= link_to "Card holders", new_user_registration_path, class: "dropdown-item" %>
               </li>
             </ul>
           </li>
-          <li>
-            <%= link_to "Log In", new_user_session_path, class: "page-scroll" %>
-          </li>
+          <%= link_to_nav "Log In", new_user_session_path %>
         </ul>
       <% end %>
     </div>
