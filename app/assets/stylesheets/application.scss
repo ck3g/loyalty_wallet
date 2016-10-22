@@ -3,7 +3,9 @@
 
 $color-blue: #3ea9f5;
 $color-dark-blue: #1f9dea;
+$color-super-dark-blue: #3769cc;
 $color-white: white;
+$color-dark-white: #eee;
 
 
 html, body {
@@ -163,7 +165,7 @@ header {
   margin-top: 0;
 }
 
-.btn-cta {
+%cool-btn {
   border-radius: 4px;
   display: inline-block;
   text-decoration: none;
@@ -176,13 +178,20 @@ header {
   font-weight: 600;
   transition: all 155ms ease-in-out;
 
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+.btn-cta {
+  @extend %cool-btn;
+
   background-color: $color-blue;
   color: $color-white;
 
   &:hover, &:focus {
     background-color: $color-dark-blue;
     color: $color-white;
-    text-decoration: none;
   }
 }
 
@@ -205,4 +214,71 @@ header {
 
   td.black { border-color: #000; }
   td.white { border-color: #fff; }
+}
+
+// ------------- signup
+
+.signup {
+  padding: 80px 40px;
+  background: $color-blue;
+  min-height: 100%;
+
+  &__title {
+    color: $color-white;
+    margin-bottom: 20px;
+  }
+
+  &__block {
+    width: 300px;
+  }
+
+  &__submit {
+    @extend %cool-btn;
+
+    background-color: $color-super-dark-blue;
+    color: $color-white;
+    border: 0;
+    margin: 10px 0;
+    width: 100%;
+
+    &:hover, &:focus {
+      background-color: darken($color-super-dark-blue, 10%);
+      color: $color-white;
+    }
+  }
+
+  label.control-label {
+    color: $color-white;
+  }
+
+  .help-block {
+    color: $color-dark-white;
+  }
+
+  &__input {
+    outline: 0;
+    padding-left: 10px;
+    vertical-align: bottom;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: auto;
+    padding: 15px 15px;
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 4px;
+  }
+}
+
+@media (min-width: 480px) {
+  .signup__block {
+    width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .signup__block {
+    width: 500px;
+  }
 }
