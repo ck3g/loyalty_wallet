@@ -21,14 +21,21 @@
           <li>
             <%= activity.vendor_name %> |
             <%= time_ago_in_words(activity.created_at) %> ago |
-            <%= activity.vendor_stamps %> / <%= Stamp::PRIZE_STAMP_COUNT %>
+            <%= current_stamps_count(activity.total_vendor_stamps) %>
           </li>
         <% end %>
       </ul>
     </div>
 
     <div role="tabpanel" class="tab-pane" id="my-cards">
-      My Cards
+      <ul>
+        <% @dashboard.my_cards.each do |vendor| %>
+          <li>
+            <%= vendor.name %> |
+            <%= current_stamps_count(vendor.total_stamps_count(current_user)) %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
