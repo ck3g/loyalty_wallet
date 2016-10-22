@@ -1,7 +1,11 @@
-<h1>Put the Stamp</h1>
+<div class="col-md-9 col-md-offset-3">
+  <h1>Put the Stamp</h1>
+</div>
 
-<%= simple_form_for @stamp, html: { class: "form-horizontal", role: "form" } do |f| %>
+<%= simple_form_for @stamp, html: { class: "form-horizontal", role: "form" }, wrapper: :horizontal_form do |f| %>
   <%= f.input :user_id, as: :text %>
-  <%= f.button :submit, "Put it", class: "btn btn-primary" %>
-  <%= link_to "Cancel", :back, class: "btn btn-link", data: { disable_with: "..." } %>
+  <div class="col-md-9 col-md-offset-3">
+    <%= f.button :submit, "Put it", class: "btn btn-primary" %>
+    <%= link_to "Cancel", :back, class: "btn btn-link", data: { disable_with: "..." } %>
+  </div>
 <% end %>
