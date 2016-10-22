@@ -26,6 +26,7 @@ gem 'jquery-rails'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'simple_form', '~> 3.3.1'
+gem 'devise', '~> 4.2.0'
 
 group :development, :test do
   gem 'pry-rails'
@@ -42,6 +43,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '~> 3.0.5'
+  gem 'letter_opener'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
