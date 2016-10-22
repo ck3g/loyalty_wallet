@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :vendor do
-    user
+    user factory: :vendor_user
     name "Cozy Little Cafe"
   end
 end
