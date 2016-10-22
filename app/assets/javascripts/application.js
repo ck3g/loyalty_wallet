@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery.lazyload
+//= require chartist
+//= require chartist-plugin-axistitle
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
@@ -22,6 +24,7 @@ var ALERTS_FADEOUT_DELAY_MS = 2500
 $(document).ready(function () {
   initLazyload()
   initAlerts()
+  initGraphs()
 
   bindEvents()
 
@@ -47,4 +50,59 @@ function changeNavbarClassname () {
 
 function bindEvents () {
   $(window).on('scroll', changeNavbarClassname)
+}
+
+function initGraphs () {
+  var chart = $('#user-per-day-chart')
+
+  if (chart.length === 0) return
+
+  var jsonData = chart.data('data')
+
+  var data = {
+    labels: jsonData.map(function (stamp) { return stamp.date }),
+    series: [
+      jsonData.map(function (stamp) { return stamp.count })
+    ]
+  }
+
+  var options = {
+    chartPadding: {
+      top: 20,
+      right: 10,
+      bottom: 30,
+      left: 20
+    },
+    axisY: {
+      type: Chartist.AutoScaleAxis,
+      onlyInteger: true
+    },
+    plugins: [
+      Chartist.plugins.ctAxisTitle({
+        axisX: {
+          axisTitle: 'Date',
+          axisClass: 'ct-axis-title',
+          offset: {
+            x: 0,
+            y: 40
+          },
+          textAnchor: 'middle'
+        },
+        axisY: {
+          axisTitle: 'Stamps',
+          axisClass: 'ct-axis-title',
+          offset: {
+            x: 0,
+            y: 20
+          },
+          textAnchor: 'middle',
+          flipTitle: true
+        }
+      })
+
+    ]
+
+  }
+
+  new Chartist.Line('#user-per-day-chart', data, options)
 }
