@@ -73,7 +73,9 @@ function initUsersPerDayChart () {
   var jsonData = chart.data('data')
 
   var data = {
-    labels: jsonData.map(function (stamp) { return stamp.date }),
+    labels: jsonData.map(function (stamp) {
+      return stamp.date.split('-').slice(1).reverse().join('.')
+    }),
     series: [
       jsonData.map(function (stamp) { return stamp.count })
     ]
@@ -149,7 +151,7 @@ function initUsersPerStampChart () {
     plugins: [
       Chartist.plugins.ctAxisTitle({
         axisX: {
-          axisTitle: 'Stumps Amount',
+          axisTitle: 'Stamps Amount',
           axisClass: 'ct-axis-title',
           offset: {
             x: 0,

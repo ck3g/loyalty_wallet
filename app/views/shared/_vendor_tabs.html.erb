@@ -2,10 +2,10 @@
   <li class="<%= "active" if current_page?(dashboard_path) %>">
     <%= link_to "History", dashboard_path, class: "dashboard__nav-link" %>
   </li>
-  <li class="<%= "active" if current_page?(analytics_path) %>">
-    <%= link_to "Analytics", analytics_path, class: "dashboard__nav-link" %>
-  </li>
   <li class="<%= "active" if current_page?(new_stamp_path) %>">
     <%= link_to "Manual ID", new_stamp_path, class: "dashboard__nav-link" %>
+  </li>
+  <li class="<%= "active" if current_page?(analytics_path) %>">
+    <%= link_to "Analytics", analytics_path, class: "dashboard__nav-link" %>
   </li>
 </ul>
