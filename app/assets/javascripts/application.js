@@ -24,11 +24,20 @@ var ALERTS_FADEOUT_DELAY_MS = 2500
 $(document).ready(function () {
   initLazyload()
   initAlerts()
-  initGraphs()
+  initUsersPerDayChart()
+  initUsersPerStampChart()
   initModals()
 
   bindEvents()
 })
+
+var range = function (low, high) {
+  var list = []
+
+  for (var i = low; i <= high; i++) list.push(i)
+
+  return list
+}
 
 function initModals () {
   var freeStuffModal = $("#free-stuff-modal")
@@ -56,8 +65,8 @@ function bindEvents () {
   $(window).on('scroll', changeNavbarClassname)
 }
 
-function initGraphs () {
-  var chart = $('#user-per-day-chart')
+function initUsersPerDayChart () {
+  var chart = $('#users-per-day-chart')
 
   if (chart.length === 0) return
 
@@ -108,5 +117,61 @@ function initGraphs () {
 
   }
 
-  new Chartist.Line('#user-per-day-chart', data, options)
+  new Chartist.Line('#users-per-day-chart', data, options)
+}
+
+function initUsersPerStampChart () {
+  var chart = $('#users-per-stamp-chart')
+
+  if (chart.length === 0) return
+
+  var jsonData = chart.data('data')
+
+  var stamps = range(1, 10)
+  var data = {
+    labels: stamps,
+    series: [
+      stamps.map(function (s) { return jsonData[s] || 0 })
+    ]
+  }
+
+  var options = {
+    chartPadding: {
+      top: 20,
+      right: 10,
+      bottom: 30,
+      left: 20
+    },
+    axisY: {
+      type: Chartist.AutoScaleAxis,
+      onlyInteger: true
+    },
+    plugins: [
+      Chartist.plugins.ctAxisTitle({
+        axisX: {
+          axisTitle: 'Stumps Amount',
+          axisClass: 'ct-axis-title',
+          offset: {
+            x: 0,
+            y: 40
+          },
+          textAnchor: 'middle'
+        },
+        axisY: {
+          axisTitle: 'Customers',
+          axisClass: 'ct-axis-title',
+          offset: {
+            x: 0,
+            y: 20
+          },
+          textAnchor: 'middle',
+          flipTitle: true
+        }
+      })
+
+    ]
+
+  }
+
+  new Chartist.Bar('#users-per-stamp-chart', data, options)
 }

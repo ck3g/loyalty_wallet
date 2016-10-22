@@ -6,12 +6,12 @@
   <div class="tab-content clearfix">
     <div>
       <h4>Stamps per day</h4>
-      <div class="ct-chart ct-perfect-fourth" id="user-per-day-chart" data-data="<%= @analytics.users_per_day.to_json %>"></div>
+      <div class="ct-chart ct-perfect-fourth" id="users-per-day-chart" data-data="<%= @analytics.users_per_day.to_json %>"></div>
     </div>
 
     <div>
       <h4>Stamp Cards</h4>
-      <%= @analytics.current_cards %>
+      <div class="ct-chart ct-perfect-fourth" id="users-per-stamp-chart" data-data="<%= @analytics.current_cards.to_json %>"></div>
     </div>
   </div>
 </div>
