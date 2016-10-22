@@ -1,5 +1,6 @@
 .btn-cta {
   @extend %cool-btn;
+  font-size: 13px;
 
   background-color: $color-blue;
   color: $color-white;
@@ -23,3 +24,8 @@
   }
 }
 
+@media (min-width: 480px) {
+  .btn-cta {
+    font-size: 17px;
+  }
+}

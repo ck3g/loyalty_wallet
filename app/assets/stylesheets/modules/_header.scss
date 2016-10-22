@@ -21,7 +21,7 @@ header {
   .header-content {
     position: relative;
     text-align: center;
-    padding: 100px 15px 100px;
+    padding: 100px 10px 100px;
     width: 100%;
 
     .header-content-inner {
@@ -44,6 +44,12 @@ header {
     }
   }
 }
+@media (min-width: 480px) {
+  header .header-content {
+    padding: 100px 15px 100px;
+  }
+}
+
 @media (min-width: 768px) {
   header {
     min-height: 100%;
