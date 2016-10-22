@@ -10,7 +10,7 @@
         <%= @dashboard.users_per_day %>
         <% @dashboard.recent_activity.each do |activity| %>
           <li>
-            <%= activity.user_email %> | <%= time_ago_in_words(activity.created_at) %> ago
+            Customer#<%= activity.user_id %> | <%= time_ago_in_words(activity.created_at) %> ago
           </li>
         <% end %>
       </ul>

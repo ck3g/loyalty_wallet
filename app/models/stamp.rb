@@ -7,7 +7,6 @@ class Stamp < ApplicationRecord
   validates :user, :vendor, presence: true
 
   delegate :name, to: :vendor, prefix: true
-  delegate :email, to: :user, prefix: true
 
   def total_vendor_stamps
     vendor.total_stamps_count(user)
