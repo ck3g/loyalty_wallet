@@ -10,7 +10,7 @@
     </div>
     <div class="user-stamp">
       <% Stamp::PRIZE_STAMP_COUNT.times do |i| %>
-        <span class="user-stamp__item user-stamp__item--<%= current_count > i ? "success" : "default" %>"></span>
+        <span class="user-stamp__item user-stamp__item--<%= current_count > i+2 ? "success" : "default" %>"></span>
       <% end %>
     </div>
     <div class="text-muted text-right">

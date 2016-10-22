@@ -9,6 +9,8 @@ $color-white: white;
 $color-dark-white: #eee;
 $color-light-grey: #f8f8f8;
 $color-black: #000;
+$color-green: #5cb85c;
+$color-dark-green: darken(#5cb85c, 5%);
 
 $brand-primary: $color-blue;
 
@@ -531,10 +533,12 @@ header {
     }
 
     &--success {
-      background-color: #5cb85c;
+      background-color: $color-green;
+      border: 1px solid $color-dark-green;
     }
     &--default {
       background-color: #bbb;
+      border: 1px solid darken(#bbb, 5%);
     }
   }
 }
