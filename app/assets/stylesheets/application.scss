@@ -58,24 +58,24 @@ aside {
     text-transform: uppercase;
     background: transparent;
   }
-  .nav > li > a,
-  .nav > li > a:focus {
+  .nav li a,
+  .nav li a:focus {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 13px;
     color: black;
   }
-  .nav > li > a:hover,
-  .nav > li > a:focus:hover {
+  .nav li a:hover,
+  .nav li a:focus:hover {
     color: $color-blue;
   }
-  .nav > li.active > a,
-  .nav > li.active > a:focus {
+  .nav li.active a,
+  .nav li.active a:focus {
     color: $color-blue !important;
     background-color: transparent;
   }
-  .nav > li.active > a:hover,
-  .nav > li.active > a:focus:hover {
+  .nav li.active a:hover,
+  .nav li.active a:focus:hover {
     background-color: transparent;
   }
 }
