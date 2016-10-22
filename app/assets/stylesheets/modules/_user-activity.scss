@@ -11,4 +11,20 @@
     box-shadow: 0 0 5px rgba(92, 184, 92, 1);
     border: 1px solid rgba(92, 184, 92, 1);
   }
+
+  &__head {
+    position: relative;
+  }
+
+  &__score {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+
+    &--highlight {
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
 }
