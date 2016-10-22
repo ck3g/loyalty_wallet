@@ -1,5 +1,5 @@
 class CurrentCountCalculator
-  
+
   def initialize(total_count)
     @total_count = total_count
   end
