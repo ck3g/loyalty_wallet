@@ -3,6 +3,10 @@ Vendor: <%= @dashboard.vendor_name %>
 <%= link_to "Put Stamp", new_stamp_path, class: "btn btn-success" %>
 
 <div>
+  <%= @dashboard.users_per_day %>
+</div>
+
+<div>
   <ul>
     <% @dashboard.recent_activity.each do |activity| %>
       <li>
