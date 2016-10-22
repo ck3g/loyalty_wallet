@@ -7,6 +7,8 @@ body {
 }
 .page-container {
   padding-top: 60px;
+  min-height: 100%;
+  background-color: $color-light-grey;
 }
 a {
   transition: all 0.35s;
