@@ -7,6 +7,8 @@
     @extend .nav;
     @extend .nav-pills;
 
+    margin-bottom: 20px;
+
     & > li > a {
       border-radius: 0;
     }
