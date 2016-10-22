@@ -10,10 +10,12 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Send me reset password instructions", class: "signup__submit" %>
+        <%= f.button :submit, "Send Reset Link", class: "signup__submit" %>
       </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
+    <div class="text-center">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
