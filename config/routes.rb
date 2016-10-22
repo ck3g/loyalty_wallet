@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   resources :stamps, only: [:new, :create]
 
+  get "/users/:user_id/put-stamp" => "stamps#create"
+
   root "welcome#index"
 end

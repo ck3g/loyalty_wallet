@@ -1,3 +1,7 @@
 en:
   users:
     your_id: Your ID
+
+  stamps:
+    successfully_created: "You've just put the stamp for user with ID: %{user_id}"
+    failure: "We cannot find this user in our system"
