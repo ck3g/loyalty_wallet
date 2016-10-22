@@ -366,3 +366,8 @@ header {
 @media (min-width: 768px) {
   .dashboard { width: 500px; }
 }
+
+// ------------------- content
+.content {
+  @extend .row;
+}
