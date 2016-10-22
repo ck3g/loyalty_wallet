@@ -8,6 +8,20 @@ $color-white: white;
 $color-dark-white: #eee;
 $color-black: #000;
 
+%cool-input {
+  outline: 0;
+  padding-left: 10px;
+  vertical-align: bottom;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  height: auto;
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
 
 html, body {
   height: 100%;
@@ -283,18 +297,8 @@ header {
   }
 
   &__input {
-    outline: 0;
-    padding-left: 10px;
-    vertical-align: bottom;
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-    height: auto;
+    @extend %cool-input;
     padding: 15px 15px;
-    display: inline-block;
-    border: 2px solid white;
-    border-radius: 4px;
   }
 }
 
@@ -335,6 +339,20 @@ header {
         background-color: $color-dark-blue;
       }
     }
+  }
+
+  &__manual-id {
+    margin-top: 20px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    @extend %cool-input;
+    padding: 10px 12px;
+    border: 2px solid #ddd;
   }
 }
 

@@ -4,14 +4,12 @@
   <%= render 'shared/vendor_tabs' %>
 
   <div class="tab-content clearfix">
-    <div>
-      <div>
-        <%= simple_form_for @stamp, html: { role: "form" } do |f| %>
-          <%= f.input :user_id, as: :string, label: false, placeholder: "User ID" %>
-          <%= f.button :submit, "Stamp", class: "btn btn-primary" %>
-          <%= link_to "Cancel", :back, class: "btn btn-link", data: { disable_with: "..." } %>
-        <% end %>
-      </div>
+    <div class="dashboard__manual-id">
+      <%= simple_form_for @stamp, html: { role: "form" } do |f| %>
+        <%= f.input :user_id, as: :string, label: false, placeholder: "User ID", input_html: { class: "dashboard__input" } %>
+        <%= f.button :submit, "Stamp", class: "btn btn-primary" %>
+        <%= link_to "Cancel", :back, class: "btn btn-link", data: { disable_with: "..." } %>
+      <% end %>
     </div>
   </div>
 </div>
