@@ -291,3 +291,13 @@ header {
     width: 500px;
   }
 }
+
+
+// ------------- alerts
+
+.alert.alert-success {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  z-index: 100;
+}
