@@ -1,4 +1,10 @@
-<ul class="nav nav-tabs" role="tablist">
-  <li role="presentation" class="<%= "active" if current_page?(dashboard_path) %>"><%= link_to "My Stats", dashboard_path %></li>
-  <li role="presentation" class="<%= "active" if current_page?(new_stamp_path) %>"><%= link_to "Manual ID", new_stamp_path %></li>
-</ul>
+<div class="row">
+  <div class="col-xs-12 col-lg-12">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="<%= "active" if current_page?(dashboard_path) %>"><%= link_to "My Stats", dashboard_path %></li>
+      <li role="presentation" class="<%= "active" if current_page?(new_stamp_path) %>"><%= link_to "Manual ID", new_stamp_path %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="spacer"></div>
