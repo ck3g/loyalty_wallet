@@ -6,7 +6,7 @@ feature 'User Dashboard' do
 
     sign_in_as vendor.user.email
 
-    expect(page).to have_content "Vendor: #{vendor.name}"
+    expect(page).to have_content vendor.name
   end
 end
 

@@ -9,6 +9,10 @@ class UserDashboard
     @recent_activity ||= user.stamps.includes(:vendor).order(created_at: :desc).limit(100)
   end
 
+  def my_cards
+    @my_cards = Vendor.where(id: user.stamps.pluck(:vendor_id).uniq).order(:name)
+  end
+
   def user_code
     user.id
   end

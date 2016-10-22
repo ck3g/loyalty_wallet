@@ -9,7 +9,7 @@ class Stamp < ApplicationRecord
   delegate :name, to: :vendor, prefix: true
   delegate :email, to: :user, prefix: true
 
-  def vendor_stamps
-    vendor.stamps.where(user: user).count % PRIZE_STAMP_COUNT
+  def total_vendor_stamps
+    vendor.total_stamps_count(user)
   end
 end

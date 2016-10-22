@@ -1,20 +1,41 @@
-<div class="row">
-  <div class="col-xs-12">
-    <div class="qr-code">
-      <%= raw @dashboard.qr_code.as_html %>
-    </div>
-    <div><%= t("users.your_id") %>: <%= @dashboard.user_code %></div>
-  </div>
-</div>
-
-<div>
-  <ul>
-    <% @dashboard.recent_activity.each do |activity| %>
-      <li>
-        <%= activity.vendor_name %> |
-        <%= time_ago_in_words(activity.created_at) %> ago |
-        <%= activity.vendor_stamps %> / <%= Stamp::PRIZE_STAMP_COUNT %>
-      </li>
-    <% end %>
+<div class="dashboard dashboard--user center-block">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#qr-code" aria-controls="qr-code" role="tab" data-toggle="tab">QR Code</a></li>
+    <li role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Activity</a></li>
+    <li role="presentation"><a href="#my-cards" aria-controls="my-cards" role="tab" data-toggle="tab">My Cards</a></li>
   </ul>
+
+  <div class="spacer"></div>
+
+  <div class="tab-content clearfix">
+    <div role="tabpanel" class="tab-pane active" id="qr-code">
+      <div class="qr-code">
+        <%= raw @dashboard.qr_code.as_html %>
+      </div>
+      <div><h3><%= t("users.your_id") %>: <%= @dashboard.user_code %></h3></div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="activity">
+      <ul>
+        <% @dashboard.recent_activity.each do |activity| %>
+          <li>
+            <%= activity.vendor_name %> |
+            <%= time_ago_in_words(activity.created_at) %> ago |
+            <%= current_stamps_count(activity.total_vendor_stamps) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="my-cards">
+      <ul>
+        <% @dashboard.my_cards.each do |vendor| %>
+          <li>
+            <%= vendor.name %> |
+            <%= current_stamps_count(vendor.total_stamps_count(current_user)) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
