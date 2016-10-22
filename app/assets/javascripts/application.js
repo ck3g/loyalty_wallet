@@ -11,11 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.lazyload
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
 
 $(document).ready(function () {
+  $("img").lazyload()
+
   setTimeout(function () {
     $(".alert-success").alert('close')
   }, 2500)

@@ -99,6 +99,8 @@ GEM
       thor (>= 0.14, < 2.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    lazyload-rails (0.3.1)
+      nokogiri (~> 1.5)
     letter_opener (1.4.1)
       launchy (~> 2.2)
     listen (3.0.8)
@@ -240,6 +242,7 @@ DEPENDENCIES
   devise (~> 4.2.0)
   factory_girl_rails (~> 4.7.0)
   jquery-rails
+  lazyload-rails
   letter_opener
   listen (~> 3.0.5)
   pg (~> 0.18)
@@ -258,4 +261,4 @@ DEPENDENCIES
   virtus (~> 1.0.5)
 
 BUNDLED WITH
-   1.10.6
+   1.13.3

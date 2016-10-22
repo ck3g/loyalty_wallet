@@ -29,6 +29,7 @@ gem 'simple_form', '~> 3.3.1'
 gem 'devise', '~> 4.2.0'
 gem 'rqrcode'
 gem 'virtus', '~> 1.0.5'
+gem 'lazyload-rails'
 
 group :development, :test do
   gem 'pry-rails'
