@@ -15,6 +15,9 @@ html, body {
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
+.container {
+  margin-top: 60px;
+}
 a {
   transition: all 0.35s;
   color: $color-blue;

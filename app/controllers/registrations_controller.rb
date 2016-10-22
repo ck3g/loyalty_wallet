@@ -1,4 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
+  layout 'welcome'
+
   def new
     if params[:type].to_s.capitalize == "Vendor"
       @vendor_form = VendorForm.new
