@@ -1,6 +1,6 @@
 class StampsController < ApplicationController
-  # TODO: replace with cancan
   before_action :authenticate_user!
+  before_action :ensure_current_user_is_a_vendor_user
 
   def new
     @stamp = current_vendor.stamps.new
@@ -16,6 +16,11 @@ class StampsController < ApplicationController
   end
 
   private
+
+  def ensure_current_user_is_a_vendor_user
+    return if current_vendor
+    redirect_to dashboard_path
+  end
 
   def stamps_params
     params.require(:stamp).permit(:user_id)
