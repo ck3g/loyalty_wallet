@@ -27,6 +27,7 @@ gem 'jquery-rails'
 
 gem 'simple_form', '~> 3.3.1'
 gem 'devise', '~> 4.2.0'
+gem 'rqrcode'
 
 group :development, :test do
   gem 'pry-rails'
