@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  layout 'welcome'
+  layout :registration_layout
 
   def new
     if params[:type].to_s.capitalize == "Vendor"
@@ -30,5 +30,9 @@ class RegistrationsController < Devise::RegistrationsController
 
   def vendor_form_params
     params.require(:vendor_form).permit(:name, :address, :email, :password, :password_confirmation)
+  end
+
+  def registration_layout
+    %w(edit update).include?(action_name) ? "application" : "welcome"
   end
 end
