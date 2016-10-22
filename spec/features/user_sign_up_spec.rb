@@ -11,6 +11,6 @@ feature "Sign up as regular user" do
       click_button "Sign up"
     end
 
-    expect(page).to have_content "A message with a confirmation link has been sent to your email address"
+    expect(page).to have_content "You have signed up successfully"
   end
 end
