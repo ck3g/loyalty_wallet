@@ -247,6 +247,12 @@ header {
     }
   }
 
+  &__link {
+    &, &:hover, &:focus {
+      color: white;
+    }
+  }
+
   label.control-label {
     color: $color-white;
   }
