@@ -1,0 +1,31 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+}
+.page-container {
+  padding-top: 60px;
+}
+a {
+  transition: all 0.35s;
+  color: $color-blue;
+}
+a:hover, a:focus {
+  color: $color-dark-blue;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+section {
+  padding: 50px 0;
+}
+aside {
+  padding: 50px 0;
+}

@@ -1,0 +1,25 @@
+.btn-cta {
+  @extend %cool-btn;
+
+  background-color: $color-blue;
+  color: $color-white;
+
+  &:hover, &:focus {
+    background-color: $color-dark-blue;
+    color: $color-white;
+  }
+}
+
+.btn-cta-success {
+  @extend %cool-btn;
+
+  background: transparent;
+  border: 1px solid #eee;
+  color: $color-black;
+
+  &:hover, &:focus {
+    background: transparent;
+    color: $color-black;
+  }
+}
+

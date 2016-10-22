@@ -1,0 +1,23 @@
+.user-stamp {
+  &__item {
+    @extend .label;
+
+    display: inline-block;
+    width: 8%;
+    height: 10px;
+    box-sizing: border-box;
+
+    &:empty {
+      display: inline-block;
+    }
+
+    &--success {
+      background-color: $color-green;
+      border: 1px solid $color-dark-green;
+    }
+    &--default {
+      background-color: #bbb;
+      border: 1px solid darken(#bbb, 5%);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+$color-blue: #3ea9f5;
+$color-light-blue: lighten($color-blue, 10%);
+$color-dark-blue: #1f9dea;
+$color-super-dark-blue: #3769cc;
+$color-white: white;
+$color-dark-white: #eee;
+$color-light-grey: #f8f8f8;
+$color-black: #000;
+$color-green: #5cb85c;
+$color-dark-green: darken(#5cb85c, 5%);
+
+$brand-primary: $color-blue;
+
+%cool-input {
+  outline: 0;
+  padding-left: 10px;
+  vertical-align: bottom;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  height: auto;
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+%cool-btn {
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 16px 0;
+  margin: 5px;
+  width: 36%;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 155ms ease-in-out;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}

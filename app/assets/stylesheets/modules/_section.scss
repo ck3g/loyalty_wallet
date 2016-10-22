@@ -1,0 +1,88 @@
+.section {
+  &--benefits {
+    padding: 0 10px;
+  }
+
+  &--howitworks {
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  &__title {
+    font-size: 24px;
+    margin: 10px 0 30px;
+    text-align: center;
+  }
+
+  &__items {
+    @extend .row;
+  }
+
+  &__item {
+    @extend .col-lg-4;
+    margin-bottom: 20px;
+  }
+
+  &__item-title {
+    text-transform: uppercase;
+  }
+
+  &__item-num {
+    font: 51px/51px Helvetica Neue, sans-serif;
+
+    &::before, &::after {
+      border-bottom: 1px solid #bbb;
+      content: '';
+      display: inline-block;
+      height: 25px;
+      vertical-align: top;
+      width: 40px;
+      margin: 0 20px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__button-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+}
+
+.section--howitworks {
+  background-color: #f5f5f5;
+}
+
+@media (min-width: 480px) {
+  .section--benefits {
+    padding: 0 20px;
+  }
+
+  .section--howitworks {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .section__title {
+    font-size: 30px;
+    margin: 20px 0 50px;
+    text-align: left;
+  }
+
+  .section__item {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .section--benefits {
+    padding: 0 50px;
+  }
+
+  .section--howitworks {
+    padding: 50px;
+    margin-top: 50px;
+  }
+}

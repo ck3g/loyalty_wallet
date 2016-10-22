@@ -1,0 +1,42 @@
+.dashboard {
+  width: 320px;
+  margin-top: 10px;
+
+  &__nav {
+    @extend .nav;
+    @extend .nav-pills;
+
+    & > li > a {
+      border-radius: 0;
+    }
+    & > li.active > a {
+      background-color: $color-blue;
+      &:hover {
+        background-color: $color-dark-blue;
+      }
+    }
+  }
+
+  &__manual-id {
+    margin-top: 20px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    @extend %cool-input;
+    padding: 10px 12px;
+    border: 2px solid #ddd;
+  }
+}
+
+@media (min-width: 480px) {
+  .dashboard { width: 400px; }
+}
+
+@media (min-width: 768px) {
+  .dashboard { width: 500px; }
+}
+
