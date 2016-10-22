@@ -29,3 +29,8 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+    labels:
+      vendor:
+        name: Business name
+      vendor_form:
+        name: Business name
