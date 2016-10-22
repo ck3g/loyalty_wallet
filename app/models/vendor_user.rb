@@ -1,0 +1,3 @@
+class VendorUser < User
+
+end
