@@ -506,3 +506,35 @@ header {
     margin-top: 50px;
   }
 }
+
+.user-activity {
+  @extend .col-xs-12;
+
+  &__panel {
+    @extend .panel;
+    @extend .panel-default;
+    padding: 15px;
+  }
+}
+
+.user-stamp {
+  &__item {
+    @extend .label;
+
+    display: inline-block;
+    width: 8%;
+    height: 10px;
+    box-sizing: border-box;
+
+    &:empty {
+      display: inline-block;
+    }
+
+    &--success {
+      background-color: #5cb85c;
+    }
+    &--default {
+      background-color: #bbb;
+    }
+  }
+}

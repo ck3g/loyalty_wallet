@@ -1,25 +1,25 @@
 <div class="dashboard dashboard--user center-block">
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#qr-code" aria-controls="qr-code" role="tab" data-toggle="tab">QR Code</a></li>
-    <li role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Activity</a></li>
-    <li role="presentation"><a href="#my-cards" aria-controls="my-cards" role="tab" data-toggle="tab">My Cards</a></li>
+  <ul class="dashboard__nav">
+    <li class="active"><a href="#qr-code" data-toggle="tab">QR Code</a></li>
+    <li><a href="#activity" data-toggle="tab">Activity</a></li>
+    <li><a href="#my-cards" data-toggle="tab">My Cards</a></li>
   </ul>
 
   <div class="spacer"></div>
 
   <div class="tab-content clearfix">
-    <div role="tabpanel" class="tab-pane active" id="qr-code">
+    <div class="tab-pane active" id="qr-code">
       <div class="qr-code">
         <%= raw @dashboard.qr_code.as_html %>
       </div>
       <div><h3><%= t("users.your_id") %>: <%= @dashboard.user_code %></h3></div>
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="activity">
+    <div class="tab-pane" id="activity">
       <%= render 'user_activity', dashboard: @dashboard %>
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="my-cards">
+    <div class="tab-pane" id="my-cards">
       <%= render 'user_cards', dashboard: @dashboard %>
     </div>
   </div>

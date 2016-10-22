@@ -1,26 +1,20 @@
-<div class="col-xs-12">
-  <div class="panel panel-default">
-    <div class="panel-body container-fluid">
-      <div class="row">
-        <div class="col-xs-10 col-md-10 col-lg-10">
-          <h4 class="text-left"><%= title %></h4>
-        </div>
-        <div class="col-xs-2 col-md-2 col-lg-2">
-          <h5 class="text-right"><%= current_count %> / <%= Stamp::PRIZE_STAMP_COUNT %></h5>
-        </div>
+<div class="user-activity">
+  <div class="user-activity__panel">
+    <div class="row">
+      <div class="col-xs-10 col-md-10 col-lg-10">
+        <h4 class="text-left"><%= title %></h4>
       </div>
-      <div class="row">
-        <div class="col-xs-1 col-md-1 col-lg-1"></div>
-        <% Stamp::PRIZE_STAMP_COUNT.times do |i| %>
-          <div class="col-xs-1 col-md-1 col-lg-1">
-            <span class="label label-<%= current_count > i ? "success" : "default" %>">&nbsp;</span>
-          </div>
-        <% end %>
-        <div class="col-xs-1 col-md-1 col-lg-1"></div>
+      <div class="col-xs-2 col-md-2 col-lg-2">
+        <h5 class="text-right"><%= current_count %>&nbsp;/&nbsp;<%= Stamp::PRIZE_STAMP_COUNT %></h5>
       </div>
-      <div class="text-muted text-right">
-        <%= date %>
-      </div>
+    </div>
+    <div class="user-stamp">
+      <% Stamp::PRIZE_STAMP_COUNT.times do |i| %>
+        <span class="user-stamp__item user-stamp__item--<%= current_count > i ? "success" : "default" %>"></span>
+      <% end %>
+    </div>
+    <div class="text-muted text-right">
+      <%= date %>
     </div>
   </div>
 </div>
