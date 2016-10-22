@@ -28,6 +28,15 @@ gem 'jquery-rails'
 gem 'simple_form', '~> 3.3.1'
 
 group :development, :test do
+  gem 'pry-rails'
+  gem 'factory_girl_rails', '~> 4.7.0'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.5.2'
+  gem 'capybara', '~> 2.10.1'
+  gem 'shoulda'
+  gem 'database_cleaner', '~> 1.5.3'
 end
 
 group :development do
