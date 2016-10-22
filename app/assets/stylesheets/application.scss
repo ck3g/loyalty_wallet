@@ -2,10 +2,12 @@
 @import "bootstrap";
 
 $color-blue: #3ea9f5;
+$color-light-blue: lighten($color-blue, 10%);
 $color-dark-blue: #1f9dea;
 $color-super-dark-blue: #3769cc;
 $color-white: white;
 $color-dark-white: #eee;
+$color-light-grey: #f8f8f8;
 $color-black: #000;
 
 $brand-primary: $color-blue;
@@ -279,16 +281,21 @@ header {
 
 .signup {
   padding: 80px 40px;
-  background: $color-blue;
+  background: $color-light-grey;
   min-height: 100%;
 
   &__title {
-    color: $color-white;
+    color: $color-black;
     margin-bottom: 20px;
   }
 
   &__block {
     width: 300px;
+    position: relative;
+    background-color: $color-white;
+    padding: 10px 30px;
+    box-shadow: 0 2px 3px rgba(33,33,33,0.05);
+    border: 1px solid $color-dark-white;
   }
 
   &__submit {
@@ -299,6 +306,7 @@ header {
     border: 0;
     margin: 10px 0;
     width: 100%;
+    margin-bottom: 20px;
 
     &:hover, &:focus {
       background-color: darken($color-super-dark-blue, 10%);
@@ -307,21 +315,24 @@ header {
   }
 
   &__link {
+    margin: 0 5px;
+
     &, &:hover, &:focus {
-      color: white;
+      color: $color-blue;
     }
   }
 
   label.control-label {
-    color: $color-white;
+    color: $color-black;
   }
 
   .help-block, .boolean {
-    color: $color-dark-white;
+    color: $color-black;
   }
 
   &__input {
     @extend %cool-input;
+    border: 1px solid $color-dark-white;
     padding: 15px 15px;
   }
 }
