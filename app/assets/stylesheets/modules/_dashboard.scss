@@ -35,6 +35,14 @@
   }
 }
 
+.dashboard--profile {
+  .dashboard__edit-profile {
+    @extend .btn-submit;
+    width: 100%;
+    margin: 0 0 20px;
+  }
+}
+
 @media (min-width: 480px) {
   .dashboard {
     margin: 10px auto;
