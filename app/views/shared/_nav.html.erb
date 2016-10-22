@@ -13,15 +13,15 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Up <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="/users/sign_up">Businesses</a>
+              <%= link_to "Businesses", new_user_registration_path(type: "Vendor"), class: "dropdown-item" %>
             </li>
             <li>
-              <a class="dropdown-item" href="/users/sign_up">Card holders</a>
+              <%= link_to "Card holders", new_user_registration_path, class: "dropdown-item" %>
             </li>
           </ul>
         </li>
         <li>
-          <a class="page-scroll" href="/users/sign_in">Log In</a>
+          <%= link_to "Log In", new_user_session_path, class: "page-scroll" %>
         </li>
       </ul>
     </div>
