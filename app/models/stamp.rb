@@ -8,8 +8,8 @@ class Stamp < ApplicationRecord
 
   delegate :name, to: :vendor, prefix: true
 
-  scope :time_filter, -> (time_ago, use_filter) {
-    where(created_at: time_ago..DateTime.current) if use_filter
+  scope :time_filter, -> (time_ago, skip_filter) {
+    where(created_at: time_ago..DateTime.current) unless skip_filter
   }
 
   def total_vendor_stamps(till_date: DateTime.current)

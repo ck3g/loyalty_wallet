@@ -8,7 +8,7 @@ class Analytics
 
   def users_per_day
     @users_per_day ||= vendor.stamps
-      .time_filter(time_ago, time_filter?)
+      .time_filter(time_ago, skip_time_filter?)
       .order("DATE(created_at)")
       .group("DATE(created_at)")
       .select("COUNT(stamps.id) as count, DATE(created_at) AS date")
@@ -36,7 +36,7 @@ class Analytics
     }.fetch(since, 1.week.ago)
   end
 
-  def time_filter?
+  def skip_time_filter?
     since == 'ever'
   end
 end
