@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>LoyaltyWallet</title>
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +11,7 @@
   </head>
 
   <body id="page-top">
+    <%= render "shared/nav" %>
     <div class="notice hide"><%= notice %></div>
     <div class="alert hide"><%= alert %></div>
 
