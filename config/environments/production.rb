@@ -63,13 +63,12 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'loyaltywallet.2016.rubyrampage.com', port: 3000 }
   config.action_mailer.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    port: 587,
-    enable_starttls_auto: true,
-    authentication: :plain,
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
-    domain: 'loyaltywallet.2016.rubyrampage.com'
+    port: ENV['MAILGUN_SMTP_PORT'],
+    address: ENV['MAILGUN_SMTP_SERVER'],
+    user_name: ENV['MAILGUN_SMTP_LOGIN'],
+    password: ENV['MAILGUN_SMTP_PASSWORD'],
+    domain: 'loyaltywallet.2016.rubyrampage.com',
+    authentication: :plain
   }
   config.action_mailer.delivery_method = :smtp
 
