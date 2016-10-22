@@ -1,7 +1,7 @@
 <% if resource  %>
   <div class="signup row">
     <div class="signup__block center-block">
-      <h2 class="signup__title">Sign up</h2>
+      <h2 class="signup__title">Sign up as Card Holder</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -23,7 +23,7 @@
 <% else %>
   <div class="signup row">
     <div class="signup__block center-block">
-      <h2 class="signup__title">Sign up</h2>
+      <h2 class="signup__title">Sign up as Business</h2>
 
       <%= simple_form_for @vendor_form, url: user_registration_path do |f| %>
         <%= f.error_notification %>
