@@ -27,6 +27,6 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def vendor_form_params
-    params.require(:vendor_form).permit(:email, :password, :password_confirmation)
+    params.require(:vendor_form).permit(:name, :address, :email, :password, :password_confirmation)
   end
 end
