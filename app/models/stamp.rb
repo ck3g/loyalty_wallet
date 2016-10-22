@@ -5,4 +5,5 @@ class Stamp < ApplicationRecord
   validates :user, :vendor, presence: true
 
   delegate :name, to: :vendor, prefix: true
+  delegate :email, to: :user, prefix: true
 end
