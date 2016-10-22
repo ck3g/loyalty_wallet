@@ -11,7 +11,9 @@
   <ul>
     <% @dashboard.recent_activity.each do |activity| %>
       <li>
-        <%= activity.vendor_name %> | <%= time_ago_in_words(activity.created_at) %> ago
+        <%= activity.vendor_name %> |
+        <%= time_ago_in_words(activity.created_at) %> ago |
+        <%= activity.vendor_stamps %> / <%= Stamp::PRIZE_STAMP_COUNT %>
       </li>
     <% end %>
   </ul>
