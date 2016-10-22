@@ -171,7 +171,7 @@ header {
   background-color: $color-blue;
   color: $color-white;
 
-  &:hover {
+  &:hover, &:focus {
     background-color: $color-dark-blue;
     color: $color-white;
     text-decoration: none;
