@@ -16,26 +16,11 @@
     </div>
 
     <div role="tabpanel" class="tab-pane" id="activity">
-      <ul>
-        <% @dashboard.recent_activity.each do |activity| %>
-          <li>
-            <%= activity.vendor_name %> |
-            <%= time_ago_in_words(activity.created_at) %> ago |
-            <%= current_stamps_count(activity.total_vendor_stamps) %>
-          </li>
-        <% end %>
-      </ul>
+      <%= render 'user_activity', dashboard: @dashboard %>
     </div>
 
     <div role="tabpanel" class="tab-pane" id="my-cards">
-      <ul>
-        <% @dashboard.my_cards.each do |vendor| %>
-          <li>
-            <%= vendor.name %> |
-            <%= current_stamps_count(vendor.total_stamps_count(current_user)) %>
-          </li>
-        <% end %>
-      </ul>
+      <%= render 'user_cards', dashboard: @dashboard %>
     </div>
   </div>
 </div>

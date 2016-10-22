@@ -6,14 +6,17 @@
   <div class="tab-content clearfix">
     <div>
       <h3>Some stats yo</h3>
-      <ul>
         <%= @dashboard.users_per_day %>
+      <div class="row">
         <% @dashboard.recent_activity.each do |activity| %>
-          <li>
-            Customer#<%= activity.user_id %> | <%= time_ago_in_words(activity.created_at) %> ago
-          </li>
+          <%=
+            render 'activities/activity_tile',
+              title: "Customer##{activity.user_id}",
+              current_count: current_stamps_count(current_vendor.total_stamps_count(activity.user)),
+              date: "#{time_ago_in_words(activity.created_at)} ago"
+          %>
         <% end %>
-      </ul>
+      </div>
     </div>
   </div>
 </div>

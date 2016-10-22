@@ -1,0 +1,10 @@
+<div class="row">
+  <% dashboard.recent_activity.each do |activity| %>
+    <%=
+      render 'activities/activity_tile',
+        title: activity.vendor_name,
+        current_count: current_stamps_count(activity.total_vendor_stamps),
+        date: "#{time_ago_in_words(activity.created_at)} ago"
+    %>
+  <% end %>
+</div>
