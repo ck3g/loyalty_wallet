@@ -1,2 +1,8 @@
-<div class="qr-code"><%= raw @dashboard.qr_code.as_html %></div>
-<div><%= t("users.your_id") %>: <%= @dashboard.user_code %></div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="qr-code">
+      <%= raw @dashboard.qr_code.as_html %>
+    </div>
+    <div><%= t("users.your_id") %>: <%= @dashboard.user_code %></div>
+  </div>
+</div>
