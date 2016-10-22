@@ -56,14 +56,15 @@ section {
 aside {
   padding: 50px 0;
 }
-.navbar-default {
-  background: rgba(255, 255, 255, 0.8);
+
+.navbar--default {
+  background: rgba(255, 255, 255, 0.9);
   border-color: rgba(34, 34, 34, 0.05);
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   transition: all 0.35s;
 
-  .navbar-header .navbar-brand {
-    color: black;
+  .navbar-brand {
+    color: $color-black;
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
@@ -74,30 +75,31 @@ aside {
   }
 
   .dropdown-menu {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
 
     .dropdown-item:hover {
       background: transparent;
     }
   }
 
-  .navbar-header .navbar-toggle {
+  .navbar-toggle {
     font-weight: 700;
     font-size: 12px;
-    color: black;
+    color: $color-black;
     text-transform: uppercase;
     background: transparent;
   }
-  .nav li a,
-  .nav li a:focus {
+  .nav li a, .nav li a:focus {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 13px;
-    color: black;
+    color: $color-black;
   }
   .nav li a:hover,
+  .nav li a:focus,
   .nav li a:focus:hover {
     color: $color-blue;
+    background-color: transparent;
   }
   .nav li.active a,
   .nav li.active a:focus {
@@ -108,6 +110,26 @@ aside {
   .nav li.active a:focus:hover {
     background-color: transparent;
   }
+}
+.navbar--active {
+  background: rgba(0, 0, 0, 0.9);
+
+  .navbar-brand {
+    color: $color-white;
+  }
+
+  .navbar-toggle {
+    color: $color-white;
+  }
+
+  .nav li a, .nav li a:focus {
+    color: $color-white;
+  }
+
+  .dropdown-menu {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
 }
 
 header {
