@@ -49,3 +49,9 @@
     width: 600px;
   }
 }
+
+@media (min-width: 1024px) {
+  .dashboard--vendor {
+    width: 800px;
+  }
+}
