@@ -1,11 +1,17 @@
-<div class="col-md-9 col-md-offset-3">
-  <h1>Put the Stamp</h1>
-</div>
+<%= render 'shared/vendor_header', vendor_name: @stamp.vendor_name %>
 
-<%= simple_form_for @stamp, html: { class: "form-horizontal", role: "form" }, wrapper: :horizontal_form do |f| %>
-  <%= f.input :user_id, as: :text %>
-  <div class="col-md-9 col-md-offset-3">
-    <%= f.button :submit, "Put it", class: "btn btn-primary" %>
-    <%= link_to "Cancel", :back, class: "btn btn-link", data: { disable_with: "..." } %>
+<div class="dashboard dashboard--vendor center-block">
+  <%= render 'shared/vendor_tabs' %>
+
+  <div class="tab-content clearfix">
+    <div>
+      <div>
+        <%= simple_form_for @stamp, html: { role: "form" } do |f| %>
+          <%= f.input :user_id, as: :string, label: false, placeholder: "User ID" %>
+          <%= f.button :submit, "Stamp", class: "btn btn-primary" %>
+          <%= link_to "Cancel", :back, class: "btn btn-link", data: { disable_with: "..." } %>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>

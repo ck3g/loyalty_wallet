@@ -1,0 +1,8 @@
+<ul class="dashboard__nav">
+  <li class="<%= "active" if current_page?(dashboard_path) %>">
+    <%= link_to "My Stats", dashboard_path, class: "dashboard__nav-link" %>
+  </li>
+  <li class="<%= "active" if current_page?(new_stamp_path) %>">
+    <%= link_to "Manual ID", new_stamp_path, class: "dashboard__nav-link" %>
+  </li>
+</ul>

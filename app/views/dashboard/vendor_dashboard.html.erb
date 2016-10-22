@@ -1,22 +1,11 @@
+<%= render 'shared/vendor_header', vendor_name: @dashboard.vendor_name %>
+
 <div class="dashboard dashboard--vendor center-block">
-  <ul class="dashboard__nav">
-    <li class="active">
-      <a class="dashboard__nav-link" href="#1a" data-toggle="tab">Manual ID</a>
-    </li>
-    <li><a class="dashboard__nav-link" href="#2a" data-toggle="tab">My Stats</a> </li>
-    <li><a class="dashboard__nav-link" href="#3a" data-toggle="tab">Send Campaign</a> </li>
-  </ul>
+  <%= render 'shared/vendor_tabs' %>
 
   <div class="tab-content clearfix">
-    <div class="tab-pane active" id="1a">
-      <h3><%= @dashboard.vendor_name %></h3>
-
-      <%= link_to "Put Stamp", new_stamp_path, class: "btn-cta-success" %>
-
-    </div>
-    <div class="tab-pane" id="2a">
+    <div>
       <h3>Some stats yo</h3>
-
       <ul>
         <%= @dashboard.users_per_day %>
         <% @dashboard.recent_activity.each do |activity| %>
@@ -25,10 +14,6 @@
           </li>
         <% end %>
       </ul>
-
-    </div>
-    <div class="tab-pane" id="3a">
-      <h3>Email campaign</h3>
     </div>
   </div>
 </div>
