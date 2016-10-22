@@ -11,6 +11,7 @@
       <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
           <%= link_to_nav "Dashboard", dashboard_path %>
+          <%= link_to_nav "Settings", edit_vendor_path %>
           <%= link_to_nav "Profile", edit_user_registration_path %>
           <%= link_to_nav "Log Out", destroy_user_session_path %>
         </ul>

@@ -1,0 +1,19 @@
+<div class="spacer"></div>
+
+<div class="dashboard center-block">
+  <h3 class="dashboard__title">Edit Settings</h3>
+
+  <%= simple_form_for current_vendor do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name, required: true, autofocus: true %>
+    <div class="form-inputs">
+    </div>
+      <%= f.input :address %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
