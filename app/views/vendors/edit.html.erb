@@ -1,18 +1,16 @@
-<div class="spacer"></div>
-
 <div class="dashboard center-block">
   <h3 class="dashboard__title">Edit Settings</h3>
 
   <%= simple_form_for current_vendor do |f| %>
     <div class="form-inputs">
-      <%= f.input :name, required: true, autofocus: true %>
+      <%= f.input :name, required: true, autofocus: true, input_html: { class: "signup__input" } %>
     <div class="form-inputs">
     </div>
-      <%= f.input :address %>
+      <%= f.input :address, input_html: { class: "signup__input" } %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Update", class: "btn btn-primary" %>
+      <%= f.button :submit, "Update", class: "dashboard__submit-btn" %>
     </div>
   <% end %>
 </div>
