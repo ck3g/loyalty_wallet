@@ -1,17 +1,19 @@
-Vendor: <%= @dashboard.vendor_name %>
+<%= render 'shared/vendor_header', vendor_name: @dashboard.vendor_name %>
+<%= render 'shared/vendor_tabs' %>
 
-<%= link_to "Put Stamp", new_stamp_path, class: "btn btn-success" %>
 
-<div>
-  <%= @dashboard.users_per_day %>
-</div>
+<div class="tab-content">
+  <div>
+    <%= @dashboard.users_per_day %>
+  </div>
 
-<div>
-  <ul>
-    <% @dashboard.recent_activity.each do |activity| %>
-      <li>
-        <%= activity.user_email %> | <%= time_ago_in_words(activity.created_at) %> ago
-      </li>
-    <% end %>
-  </ul>
+  <div>
+    <ul>
+      <% @dashboard.recent_activity.each do |activity| %>
+        <li>
+          <%= activity.user_email %> | <%= time_ago_in_words(activity.created_at) %> ago
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

@@ -7,11 +7,11 @@ feature 'Put Stamp manually' do
 
   scenario "Can put stamp manually by knowing user's ID" do
     sign_in_as vendor_user.email
-    click_link "Put Stamp"
+    click_link "Manual ID"
 
     within "#new_stamp" do
       fill_in :stamp_user_id, with: user.id
-      click_button "Put it"
+      click_button "Stamp"
     end
 
     expect(page).to have_content "You've just put the stamp for user with ID: #{user.id}"
