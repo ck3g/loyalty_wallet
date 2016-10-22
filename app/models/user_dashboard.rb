@@ -5,6 +5,10 @@ class UserDashboard
     @user = user
   end
 
+  def recent_activity
+    @recent_activity ||= user.stamps.includes(:vendor).order(created_at: :desc).limit(100)
+  end
+
   def user_code
     user.id
   end

@@ -6,3 +6,13 @@
     <div><%= t("users.your_id") %>: <%= @dashboard.user_code %></div>
   </div>
 </div>
+
+<div>
+  <ul>
+    <% @dashboard.recent_activity.each do |activity| %>
+      <li>
+        <%= activity.vendor_name %> | <%= time_ago_in_words(activity.created_at) %> ago
+      </li>
+    <% end %>
+  </ul>
+</div>
