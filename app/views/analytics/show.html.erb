@@ -1,0 +1,12 @@
+<div class="dashboard dashboard--vendor center-block">
+  <h3 class="dashboard__title"><%= @analytics.vendor.name %></h3>
+
+  <%= render 'shared/vendor_tabs' %>
+
+  <div class="tab-content clearfix">
+    <div class="row">
+      <h3>Analytics</h3>
+      <%= @analytics.users_per_day %>
+    </div>
+  </div>
+</div>
