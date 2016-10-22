@@ -11,7 +11,7 @@ class Analytics
       .order("DATE(created_at)")
       .group("DATE(created_at)")
       .select("COUNT(stamps.id) as count, DATE(created_at) AS date")
-      .map { |stamp| { stamp.date => stamp.count } }
+      .map { |stamp| { :date => stamp.date, :count => stamp.count } }
   end
 
   def current_cards
