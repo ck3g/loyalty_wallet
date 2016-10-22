@@ -90,6 +90,16 @@ header {
   text-align: center;
   color: $color-white;
 
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, rgba(0,108,183,0.75), rgba(0,108,183,0));
+  }
+
   .header-content {
     position: relative;
     text-align: center;
