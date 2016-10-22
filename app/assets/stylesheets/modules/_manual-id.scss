@@ -1,0 +1,15 @@
+.manual-id {
+  margin-top: 20px;
+
+  &__cancel, &__submit {
+    @extend %cool-btn;
+    @extend .col-xs-6;
+    @extend .col-md-6;
+    @extend .col-lg-6;
+  }
+
+  &__submit {
+    @extend .btn-submit;
+    float: right;
+  }
+}

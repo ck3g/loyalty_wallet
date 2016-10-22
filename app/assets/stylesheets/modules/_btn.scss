@@ -24,6 +24,19 @@
   }
 }
 
+.btn-submit {
+  @extend %cool-btn;
+
+  background-color: $color-super-dark-blue;
+  color: $color-white;
+  border: 0;
+
+  &:hover, &:focus {
+    background-color: darken($color-super-dark-blue, 10%);
+    color: $color-white;
+  }
+}
+
 @media (min-width: 480px) {
   .btn-cta {
     font-size: 17px;

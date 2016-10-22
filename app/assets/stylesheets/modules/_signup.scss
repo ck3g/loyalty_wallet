@@ -18,19 +18,10 @@
   }
 
   &__submit {
-    @extend %cool-btn;
-
-    background-color: $color-super-dark-blue;
-    color: $color-white;
-    border: 0;
+    @extend .btn-submit;
     margin: 10px 0;
     width: 100%;
     margin-bottom: 20px;
-
-    &:hover, &:focus {
-      background-color: darken($color-super-dark-blue, 10%);
-      color: $color-white;
-    }
   }
 
   &__link {
