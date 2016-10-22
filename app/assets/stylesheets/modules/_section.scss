@@ -28,14 +28,15 @@
   }
 
   &__item-num {
-    font-size: 96px;
-    line-height: 96px;
+    font-family: "Algerian", sans-serif;
+    font-size: 150px;
+    line-height: 150px;
 
     &::before, &::after {
       border-bottom: 1px solid #bbb;
       content: '';
       display: inline-block;
-      height: 48px;
+      height: 75px;
       vertical-align: top;
       width: 40px;
       margin: 0 20px;
