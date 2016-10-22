@@ -36,7 +36,7 @@
 @media (min-width: 480px) {
   .dashboard {
     margin: 10px auto;
-    width: 400px;
+    width: 450px;
     box-shadow: 0 2px 3px rgba(33,33,33,0.05);
     border: 1px solid $color-dark-white;
   }
@@ -44,6 +44,6 @@
 
 @media (min-width: 768px) {
   .dashboard {
-    width: 500px;
+    width: 600px;
   }
 }
