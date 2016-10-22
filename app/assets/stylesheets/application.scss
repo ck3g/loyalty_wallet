@@ -1,2 +1,169 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$color-blue: #3ea9f5;
+$color-dark-blue: #1f9dea;
+$color-white: white;
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+}
+a {
+  transition: all 0.35s;
+  color: $color-blue;
+}
+a:hover, a:focus {
+  color: $color-dark-blue;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+section {
+  padding: 100px 0;
+}
+aside {
+  padding: 50px 0;
+}
+.navbar-default {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(34, 34, 34, 0.05);
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  transition: all 0.35s;
+
+  .navbar-header .navbar-brand {
+    color: $color-blue;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:hover, &:focus {
+      color: $color-dark-blue;
+    }
+  }
+
+  .navbar-header .navbar-toggle {
+    font-weight: 700;
+    font-size: 12px;
+    color: black;
+    text-transform: uppercase;
+    background: transparent;
+  }
+  .nav > li > a,
+  .nav > li > a:focus {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    color: black;
+  }
+  .nav > li > a:hover,
+  .nav > li > a:focus:hover {
+    color: $color-blue;
+  }
+  .nav > li.active > a,
+  .nav > li.active > a:focus {
+    color: $color-blue !important;
+    background-color: transparent;
+  }
+  .nav > li.active > a:hover,
+  .nav > li.active > a:focus:hover {
+    background-color: transparent;
+  }
+}
+
+header {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  background-size: cover;
+  background-position: center;
+  background-image: image_url('header.jpg');
+  text-align: center;
+  color: $color-white;
+
+  .header-content {
+    position: relative;
+    text-align: center;
+    padding: 100px 15px 100px;
+    width: 100%;
+
+    .header-content-inner {
+      h1 {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 30px;
+      }
+      hr {
+        margin: 30px auto;
+      }
+      p {
+        font-weight: 300;
+        color: $color-white;
+        font-size: 16px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  header {
+    min-height: 100%;
+  }
+  header .header-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 50px;
+  }
+  header .header-content .header-content-inner {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header .header-content .header-content-inner h1 {
+    font-size: 50px;
+  }
+  header .header-content .header-content-inner p {
+    font-size: 18px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.section-heading {
+  margin-top: 0;
+}
+
+.btn-cta {
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 16px 0;
+  margin: 5px;
+  width: 36%;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 155ms ease-in-out;
+
+  background-color: $color-blue;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-dark-blue;
+    color: $color-white;
+    text-decoration: none;
+  }
+}
