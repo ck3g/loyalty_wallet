@@ -172,8 +172,11 @@ function initUsersPerStampChart () {
       })
 
     ]
-
   }
 
-  new Chartist.Bar('#users-per-stamp-chart', data, options)
+  new Chartist.Bar('#users-per-stamp-chart', data, options).on('draw', function (data) {
+    if (data.type === 'bar') {
+      data.element.attr({ style: 'stroke-width: 30px' })
+    }
+  })
 }
