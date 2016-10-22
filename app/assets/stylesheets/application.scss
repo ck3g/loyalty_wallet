@@ -51,6 +51,14 @@ aside {
     }
   }
 
+  .dropdown-menu {
+    background: rgba(255, 255, 255, 0.8);
+
+    .dropdown-item:hover {
+      background: transparent;
+    }
+  }
+
   .navbar-header .navbar-toggle {
     font-weight: 700;
     font-size: 12px;
