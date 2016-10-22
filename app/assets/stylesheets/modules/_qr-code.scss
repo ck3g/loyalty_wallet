@@ -1,21 +1,27 @@
 // ------------ QR Code Styles
 .qr-code {
-  table {
-    border-width: 0;
-    border-style: none;
-    border-color: #0000ff;
-    border-collapse: collapse;
-  }
+  @extend .tab-pane;
+  text-align: center;
 
-  td {
-    border-left: solid 5px #000;
-    padding: 0;
-    margin: 0;
-    width: 0px;
-    height: 5px;
-  }
+  &__table {
+    table {
+      margin: 0 auto;
+      border-width: 0;
+      border-style: none;
+      border-color: #0000ff;
+      border-collapse: collapse;
+    }
 
-  td.black { border-color: #000; }
-  td.white { border-color: #fff; }
+    td {
+      border-left: solid 5px #000;
+      padding: 0;
+      margin: 0;
+      width: 0px;
+      height: 5px;
+    }
+
+    td.black { border-color: #000; }
+    td.white { border-color: #fff; }
+  }
 }
 

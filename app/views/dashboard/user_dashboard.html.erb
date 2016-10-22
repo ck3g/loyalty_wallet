@@ -1,4 +1,4 @@
-<div class="dashboard dashboard--user center-block">
+<div class="dashboard dashboard--user">
   <ul class="dashboard__nav">
     <li class="active"><a href="#qr-code" data-toggle="tab">QR Code</a></li>
     <li><a href="#activity" data-toggle="tab">Activity</a></li>
@@ -8,8 +8,8 @@
   <div class="spacer"></div>
 
   <div class="tab-content clearfix">
-    <div class="tab-pane active" id="qr-code">
-      <div class="qr-code">
+    <div class="qr-code active" id="qr-code">
+      <div class="qr-code__table">
         <%= raw @dashboard.qr_code.as_html %>
       </div>
       <div><h3><%= t("users.your_id") %>: <%= @dashboard.user_code %></h3></div>

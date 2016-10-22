@@ -1,6 +1,7 @@
 .dashboard {
-  width: 320px;
-  margin-top: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 30px;
 
   &__nav {
     @extend .nav;
@@ -33,10 +34,16 @@
 }
 
 @media (min-width: 480px) {
-  .dashboard { width: 400px; }
+  .dashboard {
+    margin: 10px auto;
+    width: 400px;
+    box-shadow: 0 2px 3px rgba(33,33,33,0.05);
+    border: 1px solid $color-dark-white;
+  }
 }
 
 @media (min-width: 768px) {
-  .dashboard { width: 500px; }
+  .dashboard {
+    width: 500px;
+  }
 }
-
