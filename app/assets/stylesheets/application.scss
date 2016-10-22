@@ -41,7 +41,7 @@ aside {
   transition: all 0.35s;
 
   .navbar-header .navbar-brand {
-    color: $color-blue;
+    color: black;
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
@@ -97,7 +97,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: linear-gradient(to bottom, rgba(0,108,183,0.75), rgba(0,108,183,0));
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,108,183,0));
   }
 
   .header-content {
