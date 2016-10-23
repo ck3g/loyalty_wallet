@@ -1,4 +1,10 @@
 <div class="row">
+  <% if !dashboard.my_cards.any? %>
+    <div class="empty-message">
+      You have no cards yet.
+    </div>
+  <% end %>
+
   <% dashboard.my_cards.each do |vendor| %>
     <%=
       render 'activities/activity_tile',

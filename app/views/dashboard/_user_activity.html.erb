@@ -1,4 +1,10 @@
 <div class="row">
+  <% if !dashboard.recent_activity.any? %>
+    <div class="empty-message">
+      There is no activity yet.
+    </div>
+  <% end %>
+
   <% dashboard.recent_activity.each do |activity| %>
     <%=
       render 'activities/activity_tile',

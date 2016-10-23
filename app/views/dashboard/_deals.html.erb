@@ -1,7 +1,8 @@
-<h3 class="dashboard__title">Active Deals</h3>
-
 <div class="deals">
-  <% if deals.any? %>
+  <% if !deals.any? %>
+    <div class="empty-message">There are no active deals for you yet.</div>
+  <% else %>
+    <h3 class="dashboard__title">Active Deals</h3>
     <% deals.each do |deal| %>
       <div class="deals__item">
         <div class="deals__head">
@@ -18,7 +19,5 @@
         </div>
       </div>
     <% end %>
-  <% else %>
-    There is no active deals for you yet.
   <% end %>
 </div>
