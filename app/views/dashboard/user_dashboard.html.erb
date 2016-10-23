@@ -1,9 +1,9 @@
 <div class="dashboard dashboard--user">
   <ul class="dashboard__nav">
     <li class="active"><a href="#qr-code" data-toggle="tab">QR Code</a></li>
-    <li><a href="#activity" data-toggle="tab">Activity</a></li>
     <li><a href="#my-cards" data-toggle="tab">My Cards</a></li>
     <li><a href="#deals" data-toggle="tab">Deals</a></li>
+    <li><a href="#history" data-toggle="tab">History</a></li>
   </ul>
 
   <div class="tab-content clearfix">
@@ -15,7 +15,7 @@
       <h3 class="qr-code__id"><%= t("users.your_id") %>: <%= @dashboard.user_code %></h3>
     </div>
 
-    <div class="tab-pane" id="activity">
+    <div class="tab-pane" id="history">
       <%= render 'user_activity', dashboard: @dashboard %>
     </div>
 
