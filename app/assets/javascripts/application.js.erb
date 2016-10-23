@@ -155,14 +155,14 @@ function initUsersPerStampChart () {
       bottom: 30,
       left: 20
     },
-    axisY: {
+    axisX: {
       type: Chartist.AutoScaleAxis,
       onlyInteger: true
     },
     plugins: [
       Chartist.plugins.ctAxisTitle({
         axisX: {
-          axisTitle: 'Stamps Amount',
+          axisTitle: 'Customers',
           axisClass: 'ct-axis-title',
           offset: {
             x: 0,
@@ -171,7 +171,7 @@ function initUsersPerStampChart () {
           textAnchor: 'middle'
         },
         axisY: {
-          axisTitle: 'Customers',
+          axisTitle: 'Stamps Amount',
           axisClass: 'ct-axis-title',
           offset: {
             x: 0,
@@ -181,13 +181,13 @@ function initUsersPerStampChart () {
           flipTitle: true
         }
       })
-
-    ]
+    ],
+    horizontalBars: true
   }
 
   new Chartist.Bar('#users-per-stamp-chart', data, options).on('draw', function (data) {
     if (data.type === 'bar') {
-      data.element.attr({ style: 'stroke-width: 30px' })
+      data.element.attr({ style: 'stroke-width: 20px' })
     }
   })
 }
