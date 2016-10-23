@@ -32,3 +32,28 @@
     margin-top: 10px;
   }
 }
+.deals--vendor {
+  .deals {
+    &__head {
+      margin-bottom: 5px;
+    }
+
+    &__title {
+      margin-bottom: 5px;
+    }
+
+    &__item--upcoming {
+      @extend .panel-warning;
+      background: rgba(250, 235, 204, 0.2);
+    }
+
+    &__item--active {
+      @extend .panel-success;
+      background: rgba(214, 233, 198, 0.2);
+    }
+
+    &__item--expired {
+      background: rgba(170, 170, 170, 0.1);
+    }
+  }
+}

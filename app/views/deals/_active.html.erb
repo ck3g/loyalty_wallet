@@ -1,12 +1,10 @@
 <% if active_deals.any? %>
   <% active_deals.each do |deal| %>
-    <div class="deals__item">
+    <div class="deals__item deals__item--active">
       <div class="deals__head">
-        <div class="deals__title">
-          Active Deal: <br> <%= deal.title %>
-        </div>
+        <div class="deals__title"><%= deal.title %></div>
         <div>
-          <strong>Was Valid:</strong> <%= deal_valid_time(deal) %>
+          <strong>Valid:</strong> <%= deal_valid_time(deal) %>
         </div>
       </div>
       <div class="deals__message">

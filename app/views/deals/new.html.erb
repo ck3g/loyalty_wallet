@@ -4,14 +4,25 @@
   <%= render 'shared/vendor_tabs' %>
 
   <div class="tab-content clearfix">
-    <div class="deals" id="new-deal">
+    <div class="deals deals--vendor" id="new-deal">
       <%= render 'form', deal: @deal %>
 
       <div class="spacer"></div>
 
-      <%= render 'expired', expired_deals: @expired_deals %>
-      <%= render 'active', active_deals: @active_deals %>
-      <%= render 'upcoming', upcoming_deals: @upcoming_deals %>
+      <div class="deals__section deals__section--active">
+        <h4 class="deals__section-title">Active deals:</h4>
+        <%= render 'active', active_deals: @active_deals %>
+      </div>
+
+      <div class="deals__section deals__section--upcoming">
+        <h4 class="deals__section-title">Upcoming deals:</h4>
+        <%= render 'upcoming', upcoming_deals: @upcoming_deals %>
+      </div>
+
+      <div class="deals__section deals__section--expired">
+        <h4 class="deals__section-title">Expired deals:</h4>
+        <%= render 'expired', expired_deals: @expired_deals %>
+      </div>
     </div>
   </div>
 </div>
