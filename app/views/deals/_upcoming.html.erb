@@ -1,17 +1,20 @@
 <% if upcoming_deals.any? %>
-  <% upcoming_deals.each do |deal| %>
-    <div class="deals__item deals__item--upcoming">
-      <div class="deals__head">
-        <div class="deals__title">
-          <%= deal.title %>
+  <div class="deals__section deals__section--upcoming">
+    <h4 class="deals__section-title">Upcoming deals:</h4>
+    <% upcoming_deals.each do |deal| %>
+      <div class="deals__item deals__item--upcoming">
+        <div class="deals__head">
+          <div class="deals__title">
+            <%= deal.title %>
+          </div>
+          <div>
+            <strong>Will be Valid:</strong> <%= deal_valid_time(deal) %>
         </div>
-        <div>
-          <strong>Will be Valid:</strong> <%= deal_valid_time(deal) %>
+        </div>
+        <div class="pull-right">
+          <%= link_to "Cancel deal", deal, method: :delete, data: { confirm: "Do you realy want to cancel the booking?" } %>
         </div>
       </div>
-      <div class="pull-right">
-        <%= link_to "Cancel deal", deal, method: :delete, data: { confirm: "Do you realy want to cancel the booking?" } %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 <% end %>

@@ -9,20 +9,9 @@
 
       <div class="spacer"></div>
 
-      <div class="deals__section deals__section--active">
-        <h4 class="deals__section-title">Active deals:</h4>
-        <%= render 'active', active_deals: @active_deals %>
-      </div>
-
-      <div class="deals__section deals__section--upcoming">
-        <h4 class="deals__section-title">Upcoming deals:</h4>
-        <%= render 'upcoming', upcoming_deals: @upcoming_deals %>
-      </div>
-
-      <div class="deals__section deals__section--expired">
-        <h4 class="deals__section-title">Expired deals:</h4>
-        <%= render 'expired', expired_deals: @expired_deals %>
-      </div>
+      <%= render 'active', active_deals: @active_deals %>
+      <%= render 'upcoming', upcoming_deals: @upcoming_deals %>
+      <%= render 'expired', expired_deals: @expired_deals %>
     </div>
   </div>
 </div>

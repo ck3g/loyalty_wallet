@@ -1,15 +1,18 @@
 <% if active_deals.any? %>
-  <% active_deals.each do |deal| %>
-    <div class="deals__item deals__item--active">
-      <div class="deals__head">
-        <div class="deals__title"><%= deal.title %></div>
-        <div>
-          <strong>Valid:</strong> <%= deal_valid_time(deal) %>
+  <div class="deals__section deals__section--active">
+    <h4 class="deals__section-title">Active deals:</h4>
+    <% active_deals.each do |deal| %>
+      <div class="deals__item deals__item--active">
+        <div class="deals__head">
+          <div class="deals__title"><%= deal.title %></div>
+          <div>
+            <strong>Valid:</strong> <%= deal_valid_time(deal) %>
+        </div>
+        </div>
+        <div class="deals__message">
+          <small>Once you turn on a deal it is bringing for the duration you selected and will be turned off automaticaly afterwards.</small>
         </div>
       </div>
-      <div class="deals__message">
-        <small>Once you turn on a deal it is bringing for the duration you selected and will be turned off automaticaly afterwards.</small>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 <% end %>
