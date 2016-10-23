@@ -15,6 +15,11 @@ class DealsController < VendorApplicationController
     end
   end
 
+  def destroy
+    current_vendor.deals.upcoming.find(params[:id]).destroy
+    redirect_to new_deal_path
+  end
+
   private
 
   def deal_params
