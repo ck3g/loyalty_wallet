@@ -8,7 +8,7 @@ feature "List of active deals" do
       sign_in_as "user@example.com"
 
       within "#deals" do
-        expect(page).to have_content "There is no active deals for you yet."
+        expect(page).to have_content "There are no active deals for you yet."
       end
     end
   end
@@ -21,7 +21,7 @@ feature "List of active deals" do
         sign_in_as "user@example.com"
 
         within "#deals" do
-          expect(page).to have_content "There is no active deals for you yet."
+          expect(page).to have_content "There are no active deals for you yet."
         end
       end
     end
@@ -35,7 +35,7 @@ feature "List of active deals" do
         sign_in_as "user@example.com"
 
         within "#deals" do
-          expect(page).not_to have_content "There is no active deals for you yet."
+          expect(page).not_to have_content "There are no active deals for you yet."
           expect(page).to have_content deal.title
           expect(page).to have_content deal.vendor_name
         end
