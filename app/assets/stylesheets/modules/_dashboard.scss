@@ -1,7 +1,7 @@
 .dashboard {
   box-sizing: border-box;
   width: 100%;
-  padding: 20px 30px;
+  padding: 20px 10px;
   background-color: $color-white;
 
   &__nav {
@@ -12,9 +12,12 @@
 
     & > li > a {
       border-radius: 0;
+      padding: 7px 10px;
     }
+
     & > li.active > a {
       background-color: $color-blue;
+
       &:hover {
         background-color: $color-dark-blue;
       }
@@ -45,9 +48,14 @@
 @media (min-width: 480px) {
   .dashboard {
     margin: 10px auto;
+    padding: 20px 30px;
     width: 450px;
     box-shadow: 0 2px 3px rgba(33,33,33,0.05);
     border: 1px solid $color-dark-white;
+
+    &__nav > li > a {
+      padding: 10px 15px;
+    }
   }
 }
 
