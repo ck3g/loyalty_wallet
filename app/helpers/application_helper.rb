@@ -9,4 +9,12 @@ module ApplicationHelper
   def current_stamps_count(total_count)
     CurrentCountCalculator.new(total_count).calculate
   end
+
+  def deal_days_collection
+    (1..7).to_a.map { |day| [pluralize(day, "Day"), day] }
+  end
+
+  def deal_hours_collection
+    (0..23).to_a
+  end
 end

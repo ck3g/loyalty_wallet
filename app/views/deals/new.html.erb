@@ -5,23 +5,28 @@
 
   <div class="tab-content clearfix">
     <div class="deals">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="alert alert-info"><strong>Info:</strong> You can have only active deal at a time</div>
+        </div>
+      </div>
       <%= simple_form_for @deal, html: { role: "form" } do |f| %>
         <div class="row">
           <div class="col-xs-12 col-md-12 col-lg-12">
             <%= f.input :title, as: :string, label: "Explain what is your deal is", input_html: { class: "dashboard__input" }, autofocus: true %>
           </div>
           <div class="col-xs-12 col-md-8 col-lg-8">
-            <%= f.input :valid_till_day, as: :select, collection: [['1 Day', 1], ['2 Days', 2]], input_html: { class: "dashboard_input" } %>
+            <%= f.input :valid_till_day, collection: deal_days_collection, input_html: { class: "dashboard_input" }, selected: "1 Day" %>
           </div>
           <div class="col-xs-12 col-md-4 col-lg-4">
-            <%= f.input :valid_till_hour, as: :select, collection: (0..23).to_a, input_html: { class: "dashboard_input" } %>
+            <%= f.input :valid_till_hour, collection: deal_hours_collection, input_html: { class: "dashboard_input" }, selected: 0 %>
           </div>
           <div class="col-xs-12 col-md-12 col-lg-12">
             <%= f.input :terms_of_service, as: :boolean %>
           </div>
         </div>
-        <%= link_to "Cancel", :back, class: "manual-id__cancel", data: { disable_with: "..." } %>
-        <%= f.button :submit, "Start Deal", class: "btn-cta manual-id__submit" %>
+        <%= link_to "Cancel", :back, class: "manual-id__cancel" %>
+        <%= f.button :submit, "Start Deal", class: "btn-cta manual-id__submit", data: { disable_with: "..." } %>
       <% end %>
     </div>
   </div>
