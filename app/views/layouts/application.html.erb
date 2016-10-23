@@ -11,6 +11,7 @@
   </head>
 
   <body id="page-top">
+    <%= yield :modals %>
     <%= render 'stamps/free_stuff_modal' if flash[:free_stuff] %>
 
     <%= render "shared/nav" %>

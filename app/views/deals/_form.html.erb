@@ -4,7 +4,17 @@
   </div>
 </div>
 
-<h4 class="deals__content-title">New Deal</h4>
+<div class="row">
+  <div class="col-xs-6 col-md-6 col-lg6">
+    <h4 class="deals__content-title">New Deal</h4>
+  </div>
+  <div class="col-xs-6 col-md-6 col-lg-6 text-right">
+    <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#dealsInfoModal">
+      What are deals?
+    </button>
+  </div>
+</div>
+
 
 <%= simple_form_for deal, html: { role: "form" } do |f| %>
   <div class="row">
@@ -39,5 +49,36 @@
   <div class="row">
     <%= link_to "Cancel", dashboard_path, class: "manual-id__cancel" %>
     <%= f.button :submit, "Start Deal", class: "btn-cta manual-id__submit", data: { disable_with: "..." } %>
+  </div>
+<% end %>
+
+<% content_for :modals do %>
+  <div class="modal" id="dealsInfoModal" tabindex="-1" role="dialog" aria-labelledby="dealsInfoModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="dealsInfoModalLabel">What are deals?</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+          Summarize what deal you are offering to your clients so you can attract them to your place.
+          Customers, who have a stamp from your place will see it and be tempted.
+          Try different deals such as:
+          </p>
+
+          <ul>
+            <li>Buy 2 Get 3 Items</li>
+            <li>Buy 1 Get 2 Stamps</li>
+            <li>Specials on the menu today</li>
+            <li>Special deal for our loyal customers ONLY</li>
+            <li>Free dessert with every main course</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
