@@ -8,7 +8,7 @@ class DealsController < VendorApplicationController
   def create
     @deal = current_vendor.deals.new deal_params
     if @deal.save
-      redirect_to deals_path, notice: "The Deal has been started"
+      redirect_to new_deal_path, notice: "The Deal has been started"
     else
       @deal.valid_till_hour = @deal.valid_till.hour
       render :new

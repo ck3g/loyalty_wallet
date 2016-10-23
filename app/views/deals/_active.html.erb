@@ -1,6 +1,6 @@
-<div class="row">
-  <div class="col-xs-12 col-md-12 col-lg-12">
-    <% if active_deals.any? %>
+<% if active_deals.any? %>
+  <div class="row">
+    <div class="col-xs-12 col-md-12 col-lg-12">
       <% active_deals.each do |deal| %>
         <div class="row">
           <div class="col-xs-12 col-md-12 col-lg-12">
@@ -12,17 +12,15 @@
                 </div>
                 <div>
                   <strong>Was Valid:</strong> <%= deal_valid_time(deal) %>
-                </div>
-                <div>
-                  Once you turn on a deal it is bringing for the duration you selected and will be turned off automaticaly afterwards.
-                </div>
+              </div>
+              <div>
+                Once you turn on a deal it is bringing for the duration you selected and will be turned off automaticaly afterwards.
+              </div>
               </div>
             </div>
           </div>
         </div>
       <% end %>
-    <% else %>
-      You have no active deals at the moment. You can create it <%= link_to "Now", "#new-deal", class: "btn btn-success btn-outlet" %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
