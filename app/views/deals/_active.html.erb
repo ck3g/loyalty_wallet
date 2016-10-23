@@ -1,26 +1,17 @@
 <% if active_deals.any? %>
-  <div class="row">
-    <div class="col-xs-12 col-md-12 col-lg-12">
-      <% active_deals.each do |deal| %>
-        <div class="row">
-          <div class="col-xs-12 col-md-12 col-lg-12">
-            <div class="panel panel-success">
-              <div class="panel-body">
-                <div>
-                  Active Deal: <br />
-                  <%= deal.title %>
-                </div>
-                <div>
-                  <strong>Was Valid:</strong> <%= deal_valid_time(deal) %>
-              </div>
-              <div>
-                Once you turn on a deal it is bringing for the duration you selected and will be turned off automaticaly afterwards.
-              </div>
-              </div>
-            </div>
-          </div>
+  <% active_deals.each do |deal| %>
+    <div class="deals__item">
+      <div class="deals__head">
+        <div class="deals__title">
+          Active Deal: <br> <%= deal.title %>
         </div>
-      <% end %>
+        <div>
+          <strong>Was Valid:</strong> <%= deal_valid_time(deal) %>
+        </div>
+      </div>
+      <div class="deals__message">
+        Once you turn on a deal it is bringing for the duration you selected and will be turned off automaticaly afterwards.
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
