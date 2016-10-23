@@ -39,4 +39,4 @@ en:
         valid_from_hour: at
         valid_till: Deal Ends on
         valid_till_hour: at
-        terms_of_service: I accept that then I turn on a deal it is binding for the duration I selected.
+        terms_of_service: I accept that the deal is binding for the selected duration and cannot be cancelled after the start time.
