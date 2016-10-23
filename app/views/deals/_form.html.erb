@@ -17,7 +17,7 @@
   </div>
   <div class="row">
     <div class="col-xs-8 col-md-8 col-lg-8">
-      <%= f.input :valid_from, collection: deal_days_collection, input_html: { class: "dashboard_input" }, include_blank: false %>
+      <%= f.input :valid_from, collection: deal_days_collection, input_html: { class: "dashboard_input" }, include_blank: false, selected: f.object.valid_from && f.object.valid_from.to_date.to_s %>
     </div>
     <div class="col-xs-4 col-md-4 col-lg-4">
       <%= f.input :valid_from_hour, collection: deal_hours_collection, input_html: { class: "dashboard_input" }, include_blank: false %>
@@ -25,7 +25,7 @@
   </div>
   <div class="row">
     <div class="col-xs-8 col-md-8 col-lg-8">
-      <%= f.input :valid_till, collection: deal_days_collection, input_html: { class: "dashboard_input" }, include_blank: false %>
+      <%= f.input :valid_till, collection: deal_days_collection, input_html: { class: "dashboard_input" }, include_blank: false, selected: f.object.valid_till && f.object.valid_till.to_date.to_s %>
     </div>
     <div class="col-xs-4 col-md-4 col-lg-4">
       <%= f.input :valid_till_hour, collection: deal_hours_collection, input_html: { class: "dashboard_input" }, include_blank: false %>
