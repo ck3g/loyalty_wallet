@@ -1,12 +1,9 @@
 class DealsController < VendorApplicationController
-  before_action :redirect_to_active_deal, only: [:new, :create]
-
-  def show
-    @deal = current_vendor.active_deal
-  end
-
   def new
     @deal = current_vendor.deals.new
+    @expired_deals = current_vendor.deals.expired
+    @active_deals = current_vendor.deals.active
+    @upcoming_deals = current_vendor.deals.upcoming
   end
 
   def create
@@ -25,10 +22,5 @@ class DealsController < VendorApplicationController
     params.require(:deal).permit(
       :title, :valid_from, :valid_from_hour, :valid_till, :valid_till_hour, :terms_of_service
     )
-  end
-
-  def redirect_to_active_deal
-    return unless current_vendor.active_deal
-    redirect_to deal_path(current_vendor.active_deal)
   end
 end

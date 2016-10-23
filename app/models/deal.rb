@@ -21,9 +21,11 @@ class Deal < ApplicationRecord
 
   attr_accessor :valid_from_hour, :valid_till_hour
 
+  scope :expired, -> { where("deals.valid_till < ?", DateTime.current) }
   scope :active, -> {
     where("deals.valid_from <= :date AND deals.valid_till > :date", date: DateTime.current)
   }
+  scope :upcoming, -> { where("deals.valid_from > ?", DateTime.current) }
 
   private
 

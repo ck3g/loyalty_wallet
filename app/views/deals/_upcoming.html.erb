@@ -1,0 +1,20 @@
+<% if upcoming_deals.any? %>
+  <div class="row">
+    <div class="col-xs-12 col-md-12 col-lg-12">
+      <% upcoming_deals.each do |deal| %>
+        <div class="row">
+          <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <div><%= deal.title %></div>
+                <div>
+                  <strong>Will be Valid:</strong> <%= deal_valid_time(deal) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

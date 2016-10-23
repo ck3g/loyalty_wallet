@@ -10,7 +10,6 @@ feature 'View active deal' do
       click_link "Deals"
     end
 
-    expect(current_path).to eq deal_path(deal)
     expect(page).to have_content deal.title
   end
 end

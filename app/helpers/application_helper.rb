@@ -30,7 +30,9 @@ module ApplicationHelper
   end
 
   def deal_valid_time(deal)
-    days = ((deal.valid_till - DateTime.current) / 1.day).round
-    days == 1 ? 'Today' : pluralize(days, 'Day')
+    [
+      deal.valid_from.to_s(:short),
+      deal.valid_till.to_s(:short)
+    ].join(" - ")
   end
 end

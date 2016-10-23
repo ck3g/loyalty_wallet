@@ -8,8 +8,7 @@
   <li class="<%= "active" if current_page?(analytics_path) %>">
     <%= link_to "Analytics", analytics_path, class: "dashboard__nav-link" %>
   </li>
-  <% deals_link = current_vendor.active_deal ? deal_path(current_vendor.active_deal) : new_deal_path %>
-  <li class="<%= "active" if current_page?(deals_link) %>">
-    <%= link_to "Deals", deals_link, class: "dashboard__nav-link" %>
+  <li class="<%= "active" if current_page?(new_deal_path) %>">
+    <%= link_to "Deals", new_deal_path, class: "dashboard__nav-link" %>
   </li>
 </ul>
