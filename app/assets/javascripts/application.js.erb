@@ -31,14 +31,6 @@ $(document).ready(function () {
   initFancyHeaderLoading()
 
   bindEvents()
-
-  $dealTitle = $("#deal_title")
-  $dealTitle.keyup(function(e) {
-    var chars = $(e.target).val().length
-    var charsLeft = DEAL_TITLE_LIMIT - chars
-    charsLeft = charsLeft > 0 ? charsLeft : 0
-    $("#chars-left").html(charsLeft + " characters left")
-  })
 })
 
 var range = function (low, high) {
@@ -73,6 +65,14 @@ function changeNavbarClassname () {
 
 function bindEvents () {
   $(window).on('scroll', changeNavbarClassname)
+
+  $("#deal_title").on('keyup', function (e) {
+    var chars = $(e.target).val().length
+    var charsLeft = DEAL_TITLE_LIMIT - chars
+
+    charsLeft = charsLeft > 0 ? charsLeft : 0
+    $("#chars-left").html(charsLeft + " characters left")
+  })
 }
 
 function initUsersPerDayChart () {
