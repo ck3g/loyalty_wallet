@@ -1,0 +1,20 @@
+<div class="dashboard dashboard--vendor center-block">
+  <h3 class="dashboard__title"><%= @deal.vendor_name %></h3>
+
+  <%= render 'shared/vendor_tabs' %>
+
+  <div class="tab-content clearfix">
+    <div class="deals">
+      <div>
+        Active Deal: <br />
+        <%= @deal.title %>
+      </div>
+      <div>
+        <strong>Valid:</strong> <%= deal_valid_time(@deal) %>
+      </div>
+      <div>
+        Once you turn on a deal it is bringing for the duration you selected and will be turned off automaticaly afterwards.
+      </div>
+    </div>
+  </div>
+</div>

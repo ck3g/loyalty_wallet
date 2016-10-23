@@ -16,4 +16,6 @@ class Deal < ApplicationRecord
   delegate :name, to: :vendor, prefix: true
 
   attr_accessor :valid_till_day, :valid_till_hour
+
+  scope :active, -> { where("deals.valid_till > ?", DateTime.current) }
 end

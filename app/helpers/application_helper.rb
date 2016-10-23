@@ -17,4 +17,13 @@ module ApplicationHelper
   def deal_hours_collection
     (0..23).to_a
   end
+
+  def deal_valid_time(deal)
+    days = ((deal.valid_till - DateTime.current) / 1.day).round
+    if days == 1
+      'Today'
+    else
+      pluralize(days, 'Day')
+    end
+  end
 end
