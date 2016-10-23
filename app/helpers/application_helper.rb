@@ -15,7 +15,11 @@ module ApplicationHelper
   end
 
   def deal_hours_collection
-    (0..23).to_a
+    (0..23).to_a.map { |hour| [time_format(hour), hour] }
+  end
+
+  def time_format(hour)
+    "#{"%02d" % hour}:00"
   end
 
   def deal_valid_time(deal)
