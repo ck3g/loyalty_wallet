@@ -6,7 +6,10 @@
 <%= simple_form_for deal, html: { role: "form" } do |f| %>
   <div class="row">
     <div class="col-xs-12 col-md-12 col-lg-12">
-      <%= f.input :title, as: :string, label: "Explain your deal", input_html: { class: "dashboard__input" }, autofocus: true %>
+      <%= f.input :title, as: :string, label: "Explain your deal", input_html: { class: "dashboard__input", maxlength: Deal::TITLE_LENGTH }, autofocus: true, autocomplete: false %>
+    </div>
+    <div class="col-xs-12 col-md-12 col-lg-12 text-right">
+      <span id="chars-left">150 characters left</span>
     </div>
   </div>
   <div class="row">

@@ -20,6 +20,7 @@
 
 var NAVBAR_ACTIVE_CLASSNAME = 'navbar--active'
 var ALERTS_FADEOUT_DELAY_MS = 2500
+var DEAL_TITLE_LIMIT = 150
 
 $(document).ready(function () {
   initLazyload()
@@ -30,6 +31,14 @@ $(document).ready(function () {
   initFancyHeaderLoading()
 
   bindEvents()
+
+  $dealTitle = $("#deal_title")
+  $dealTitle.keyup(function(e) {
+    var chars = $(e.target).val().length
+    var charsLeft = DEAL_TITLE_LIMIT - chars
+    charsLeft = charsLeft > 0 ? charsLeft : 0
+    $("#chars-left").html(charsLeft + " characters left")
+  })
 })
 
 var range = function (low, high) {
