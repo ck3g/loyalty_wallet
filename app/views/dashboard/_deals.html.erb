@@ -14,7 +14,7 @@
         </div>
 
         <div class="deals__date">
-          <strong>Valid:</strong> <%= deal_valid_time(deal) %>
+          <strong>Ends in:</strong> <%= distance_of_time_in_words(DateTime.current, deal.valid_till) %>
         </div>
       </div>
     <% end %>
