@@ -1,3 +1,7 @@
+.btn-default[disabled]:hover, .btn-default[disabled]:focus {
+  background-color: #2A54AC;
+}
+
 .btn-cta {
   @extend %cool-btn;
   font-size: 13px;
