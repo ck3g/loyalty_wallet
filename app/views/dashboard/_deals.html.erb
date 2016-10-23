@@ -3,16 +3,18 @@
 <div class="deals">
   <% if deals.any? %>
     <% deals.each do |deal| %>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h3><%= deal.vendor_name %></h3>
+      <div class="deals__item">
+        <div class="deals__head">
+          <h4 class="deals__title"><%= deal.vendor_name %></h3>
+          <h5 class="deals__score"><%= current_stamps_count(deal.vendor.total_stamps_count(current_user)) %> / <%= Stamp::PRIZE_STAMP_COUNT %></h5>
+        </div>
+
+        <div class="deals__text">
           <%= deal.title %>
-          <div>
-            <%= current_stamps_count(deal.vendor.total_stamps_count(current_user)) %> / <%= Stamp::PRIZE_STAMP_COUNT %>
-          </div>
-          <div>
-            <strong>Valid:</strong> <%= deal_valid_time(deal) %>
-          </div>
+        </div>
+
+        <div class="deals__date">
+          <strong>Valid:</strong> <%= deal_valid_time(deal) %>
         </div>
       </div>
     <% end %>

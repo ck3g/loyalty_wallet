@@ -1,0 +1,30 @@
+.deals {
+  &__item {
+    @extend .panel;
+    @extend .panel-body;
+    @extend .panel-default;
+  }
+
+  &__head {
+    position: relative;
+  }
+
+  &__score {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__text {
+    margin-bottom: 5px;
+  }
+
+  &__date {
+    text-align: right;
+  }
+}
