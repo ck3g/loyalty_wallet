@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resource :vendor, only: [:edit, :update]
 
   get "/users/:user_id/put-stamp" => "stamps#create"
+  get "/about" => "about#index"
 
   root "welcome#index"
 end

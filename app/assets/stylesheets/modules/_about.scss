@@ -1,0 +1,69 @@
+.about {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: $color-white;
+  background-image: image_url('made-in-wedding.jpg');
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,108,183,0));
+  }
+
+  .about-content {
+    position: relative;
+    text-align: center;
+    padding: 100px 10px 100px;
+    width: 100%;
+
+    .about-content-inner {
+      h1 {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-size: 30px;
+        text-shadow: 0 1px 0 rgba(33, 33, 33, 0.6);
+      }
+    }
+  }
+}
+@media (min-width: 480px) {
+  .about .about-content {
+    padding: 100px 15px 100px;
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    min-height: 100%;
+  }
+  .about .about-content {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-45%);
+    padding: 0 50px;
+  }
+  .about .about-content .about-content-inner {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about .about-content .about-content-inner h1 {
+    font-size: 50px;
+  }
+  .about .about-content .about-content-inner p {
+    font-size: 18px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
