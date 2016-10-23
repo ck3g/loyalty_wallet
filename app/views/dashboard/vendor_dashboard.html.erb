@@ -5,13 +5,17 @@
 
   <div class="tab-content clearfix">
     <div class="row">
-      <% @dashboard.recent_activity.each do |activity| %>
-        <%=
-          render 'activities/activity_tile',
-            title: "Customer##{activity.user_id}",
-            current_count: current_stamps_count(current_vendor.total_stamps_count(activity.user, till_date: activity.created_at)),
-            date: "#{time_ago_in_words(activity.created_at)} ago"
-        %>
+      <% if @dashboard.recent_activity.any? %>
+        <% @dashboard.recent_activity.each do |activity| %>
+          <%=
+            render 'activities/activity_tile',
+              title: "Customer##{activity.user_id}",
+              current_count: current_stamps_count(current_vendor.total_stamps_count(activity.user, till_date: activity.created_at)),
+              date: "#{time_ago_in_words(activity.created_at)} ago"
+            %>
+        <% end %>
+      <% else %>
+        <p class="text-center">Scan a customer QR code or manualy enter their cutomer ID to see their stamps.</p>
       <% end %>
     </div>
   </div>

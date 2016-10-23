@@ -5,6 +5,10 @@
 
   <div class="tab-content clearfix">
     <div class="manual-id">
+      <div class="alert alert-info">
+        In case a customer's QR code does not work manualy enter their ID shown below the QR code.
+      </div>
+
       <%= simple_form_for @stamp, html: { role: "form" } do |f| %>
         <%= f.input :user_id, as: :string, label: false, placeholder: "User ID", input_html: { class: "dashboard__input" }, autofocus: true %>
         <%= link_to "Cancel", :back, class: "manual-id__cancel", data: { disable_with: "..." } %>
