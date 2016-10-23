@@ -8,14 +8,14 @@ class Deal < ApplicationRecord
   validates :terms_of_service, acceptance: true
 
   before_validation(on: :create) do
-    if valid_till_day && valid_till_hour
-      self.valid_till = valid_till_day.to_i.days.from_now.change(hour: valid_till_hour, min: 0, sec: 0)
+    if valid_till && valid_till_hour
+      self.valid_till = valid_till.change(hour: valid_till_hour.to_i, min: 0, sec: 0)
     end
   end
 
   delegate :name, to: :vendor, prefix: true
 
-  attr_accessor :valid_till_day, :valid_till_hour
+  attr_accessor :valid_till_hour
 
   scope :active, -> { where("deals.valid_till > ?", DateTime.current) }
 end

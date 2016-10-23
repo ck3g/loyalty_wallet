@@ -11,7 +11,14 @@ module ApplicationHelper
   end
 
   def deal_days_collection
-    (1..7).to_a.map { |day| [pluralize(day, "Day"), day] }
+    (0...7).to_a.map do |day|
+      if day.zero?
+        ["Today", Date.current]
+      else
+        date = day.days.from_now.to_date
+        [date.to_s(:short), date]
+      end
+    end
   end
 
   def deal_hours_collection

@@ -14,6 +14,7 @@ class DealsController < VendorApplicationController
     if @deal.save
       redirect_to dashboard_path, notice: "The Deal has been started"
     else
+      @deal.valid_till_hour = @deal.valid_till.hour
       render :new
     end
   end
@@ -21,7 +22,7 @@ class DealsController < VendorApplicationController
   private
 
   def deal_params
-    params.require(:deal).permit(:title, :valid_till_day, :valid_till_hour, :terms_of_service)
+    params.require(:deal).permit(:title, :valid_till, :valid_till_hour, :terms_of_service)
   end
 
   def redirect_to_active_deal

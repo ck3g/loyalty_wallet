@@ -35,6 +35,6 @@ en:
       vendor_form:
         name: Business name
       deal:
-        valid_till_day: Deal Starts on
+        valid_till: Deal Starts on
         valid_till_hour: at
         terms_of_service: I accept that then I turn on a deal it is binding for the duration I selected.

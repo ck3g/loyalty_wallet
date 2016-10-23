@@ -16,10 +16,10 @@
             <%= f.input :title, as: :string, label: "Explain what is your deal is", input_html: { class: "dashboard__input" }, autofocus: true %>
           </div>
           <div class="col-xs-8 col-md-8 col-lg-8">
-            <%= f.input :valid_till_day, collection: deal_days_collection, input_html: { class: "dashboard_input" }, selected: "1 Day" %>
+            <%= f.input :valid_till, collection: deal_days_collection, input_html: { class: "dashboard_input" }, include_blank: false %>
           </div>
           <div class="col-xs-4 col-md-4 col-lg-4">
-            <%= f.input :valid_till_hour, collection: deal_hours_collection, input_html: { class: "dashboard_input" }, selected: 0 %>
+            <%= f.input :valid_till_hour, collection: deal_hours_collection, input_html: { class: "dashboard_input" }, include_blank: false %>
           </div>
           <div class="col-xs-12 col-md-12 col-lg-12">
             <%= f.input :terms_of_service, as: :boolean %>

@@ -12,7 +12,7 @@ feature "Create Deal" do
 
     within "#new_deal" do
       fill_in "deal_title", with: "Pierogi und Salad dazu"
-      select "2 Days", from: "deal_valid_till_day"
+      select "Today", from: "deal_valid_till"
       select "20:00", from: "deal_valid_till_hour"
       check "deal_terms_of_service"
       click_button "Start Deal"
