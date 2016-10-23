@@ -1,6 +1,7 @@
 class Vendor < ApplicationRecord
   belongs_to :user
   has_many :stamps, dependent: :destroy
+  has_many :deals, dependent: :destroy
 
   validates :user, :name, presence: true
 

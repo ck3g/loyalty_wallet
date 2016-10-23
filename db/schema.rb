@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022051759) do
+ActiveRecord::Schema.define(version: 20161022231935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "deals", force: :cascade do |t|
+    t.integer  "vendor_id",  null: false
+    t.string   "title",      null: false
+    t.datetime "valid_till", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vendor_id"], name: "index_deals_on_vendor_id", using: :btree
+  end
 
   create_table "stamps", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -55,6 +64,7 @@ ActiveRecord::Schema.define(version: 20161022051759) do
     t.index ["user_id"], name: "index_vendors_on_user_id", using: :btree
   end
 
+  add_foreign_key "deals", "vendors"
   add_foreign_key "stamps", "users"
   add_foreign_key "stamps", "vendors"
   add_foreign_key "vendors", "users"

@@ -1,0 +1,19 @@
+class Deal < ApplicationRecord
+  TITLE_LENGTH = 150
+  belongs_to :vendor
+
+  validates :vendor, presence: true
+  validates :title, presence: true, length: { maximum: TITLE_LENGTH }
+  validates :valid_till, presence: true
+  validates :terms_of_service, acceptance: true
+
+  before_validation(on: :create) do
+    if valid_till_day && valid_till_hour
+      self.valid_till = valid_till_day.to_i.days.from_now.change(hour: valid_till_hour, min: 0, sec: 0)
+    end
+  end
+
+  delegate :name, to: :vendor, prefix: true
+
+  attr_accessor :valid_till_day, :valid_till_hour
+end
