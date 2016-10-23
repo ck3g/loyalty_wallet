@@ -29,6 +29,7 @@ $(document).ready(function () {
   initUsersPerStampChart()
   initModals()
   initFancyHeaderLoading()
+  initFun()
 
   bindEvents()
 })
@@ -205,4 +206,14 @@ function initFancyHeaderLoading () {
   if (bigSrc) {
     img.src = bigSrc
   }
+}
+
+function initFun () {
+  var clicks = 0
+
+  $('.js-stan').on('click', function () {
+    clicks++
+
+    $('.stan').toggleClass('out', clicks === 3)
+  })
 }

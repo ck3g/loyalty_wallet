@@ -2,6 +2,11 @@
   padding: 10px 0 0 0;
 }
 
+.content--about {
+  position: relative;
+  overflow: hidden;
+}
+
 @media (min-width: 480px) {
   .content {
     padding: 20px 0 0 0;

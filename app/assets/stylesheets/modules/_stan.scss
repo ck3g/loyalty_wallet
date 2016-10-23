@@ -1,0 +1,14 @@
+.stan {
+  position: absolute;
+  right: -150px;
+
+  transition: transform .5s;
+
+  &.out {
+    transform: translateX(-120px) rotate(-20deg);
+  }
+
+  img {
+    width: 150px;
+  }
+}
