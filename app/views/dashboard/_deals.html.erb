@@ -7,6 +7,12 @@
         <div class="panel-body">
           <h3><%= deal.vendor_name %></h3>
           <%= deal.title %>
+          <div>
+            <%= current_stamps_count(deal.vendor.total_stamps_count(current_user)) %> / <%= Stamp::PRIZE_STAMP_COUNT %>
+          </div>
+          <div>
+            <strong>Valid:</strong> <%= deal_valid_time(deal) %>
+          </div>
         </div>
       </div>
     <% end %>
