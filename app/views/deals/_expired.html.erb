@@ -1,22 +1,14 @@
 <% if expired_deals.any? %>
-  <div class="row">
-    <div class="col-xs-12 col-md-12 col-lg-12">
-      <% expired_deals.each do |deal| %>
-        <div class="row">
-          <div class="col-xs-12 col-md-12 col-lg-12">
-            <div class="panel panel-muted">
-              <div class="panel-body">
-                <div>
-                  <%= deal.title %>
-                </div>
-                <div>
-                  <strong>Valid:</strong> <%= deal_valid_time(deal) %>
-                </div>
-              </div>
-            </div>
-          </div>
+  <% expired_deals.each do |deal| %>
+    <div class="deals__item">
+      <div class="deals__head">
+        <div class="deals__title">
+          <%= deal.title %>
         </div>
-      <% end %>
+        <div>
+          <strong>Valid:</strong> <%= deal_valid_time(deal) %>
+        </div>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
