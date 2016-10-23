@@ -27,6 +27,7 @@ $(document).ready(function () {
   initUsersPerDayChart()
   initUsersPerStampChart()
   initModals()
+  initFancyHeaderLoading()
 
   bindEvents()
 })
@@ -179,4 +180,20 @@ function initUsersPerStampChart () {
       data.element.attr({ style: 'stroke-width: 30px' })
     }
   })
+}
+
+function initFancyHeaderLoading () {
+  var img = new Image()
+  var header = $('.header')
+  var enhancedClass = 'header--enhanced'
+
+  var bigSrc = '<%= asset_path 'header.jpg' %>'
+
+  img.onload = function() {
+    header.addClass(enhancedClass)
+  }
+
+  if (bigSrc) {
+    img.src = bigSrc
+  }
 }
