@@ -1,0 +1,36 @@
+.footer {
+  background-color: #333e48;
+  color: $color-white;
+  padding: 50px;
+
+  a {
+    &, &:hover, &:focus {
+      color: $color-light-grey;
+    }
+  }
+
+  &__nav {
+    @extend .clearfix;
+  }
+
+  &__nav-block {
+    margin-bottom: 20px;
+
+    ul {
+      @extend .list-group;
+      list-style: none;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  .footer__nav-block {
+    float: left;
+    margin-right: 200px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

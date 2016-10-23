@@ -13,6 +13,7 @@ body {
 a {
   transition: all 0.35s;
   color: $color-blue;
+  cursor: pointer;
 }
 a:hover, a:focus {
   color: $color-dark-blue;
