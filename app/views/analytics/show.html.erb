@@ -7,7 +7,7 @@
     <div>
       <h4>Stamps per day</h4>
 
-      <blockquote class="analysis-info">Shows you how many stamps went through your system ina period of time.</blockquote>
+      <blockquote class="analysis-info">Shows you how many stamps went through your system in a period of time.</blockquote>
 
       <div class="analysis-period">
         Period:
@@ -15,7 +15,7 @@
         <a class="analysis-period__item" href="/analytics?since=2weeks">2&nbsp;weeks</a>
         <a class="analysis-period__item" href="/analytics?since=month">1&nbsp;month</a>
         <a class="analysis-period__item" href="/analytics?since=3months">3&nbsp;months</a>
-        <a class="analysis-period__item" href="/analytics?since=ever">Ever</a>
+        <a class="analysis-period__item" href="/analytics?since=ever">All time</a>
       </div>
 
       <div class="ct-chart ct-perfect-fourth" id="users-per-day-chart" data-data="<%= @analytics.users_per_day.to_json %>"></div>
