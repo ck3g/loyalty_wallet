@@ -20,10 +20,6 @@ module ApplicationHelper
 
   def deal_valid_time(deal)
     days = ((deal.valid_till - DateTime.current) / 1.day).round
-    if days == 1
-      'Today'
-    else
-      pluralize(days, 'Day')
-    end
+    days == 1 ? 'Today' : pluralize(days, 'Day')
   end
 end

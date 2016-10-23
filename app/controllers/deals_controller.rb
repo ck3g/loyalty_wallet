@@ -1,5 +1,10 @@
 class DealsController < VendorApplicationController
   before_action :redirect_to_active_deal, only: [:new, :create]
+  skip_before_action :ensure_user_is_a_vendor, only: [:index]
+
+  def index
+
+  end
 
   def show
     @deal = current_vendor.active_deal
