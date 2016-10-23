@@ -21,6 +21,10 @@ class UserDashboard
     RQRCode::QRCode.new(qr_code_uri, size: 10, level: :h)
   end
 
+  def active_deals
+    Deal.active.where(vendor_id: visited_vendors_ids).order(:valid_till)
+  end
+
   def view_name
     "user_dashboard"
   end
@@ -30,5 +34,9 @@ class UserDashboard
   def qr_code_uri
     # TODO: get rid of hardcoded stuff
     "http://loyaltywallet.2016.rubyrampage.com/users/#{user.id}/put-stamp"
+  end
+
+  def visited_vendors_ids
+    @visited_vendors_ids ||= user.stamps.pluck(:vendor_id).uniq
   end
 end

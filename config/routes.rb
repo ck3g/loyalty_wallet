@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get "/analytics" => "analytics#show"
 
-  resources :deals, only: [:index, :show, :new, :create]
+  resources :deals, only: [:show, :new, :create]
   resources :stamps, only: [:new, :create]
   resource :vendor, only: [:edit, :update]
 

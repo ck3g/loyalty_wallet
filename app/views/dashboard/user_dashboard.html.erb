@@ -3,7 +3,7 @@
     <li class="active"><a href="#qr-code" data-toggle="tab">QR Code</a></li>
     <li><a href="#activity" data-toggle="tab">Activity</a></li>
     <li><a href="#my-cards" data-toggle="tab">My Cards</a></li>
-    <li><%= link_to "Deals", deals_path %></li>
+    <li><a href="#deals" data-toggle="tab">Deals</a></li>
   </ul>
 
   <div class="tab-content clearfix">
@@ -20,6 +20,10 @@
 
     <div class="tab-pane" id="my-cards">
       <%= render 'user_cards', dashboard: @dashboard %>
+    </div>
+
+    <div class="tab-pane" id="deals">
+      <%= render 'deals', deals: @dashboard.active_deals %>
     </div>
   </div>
 </div>
