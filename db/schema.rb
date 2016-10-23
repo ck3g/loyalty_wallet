@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022231935) do
+ActiveRecord::Schema.define(version: 20161023105422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20161022231935) do
     t.datetime "valid_till", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "valid_from"
     t.index ["vendor_id"], name: "index_deals_on_vendor_id", using: :btree
   end
 

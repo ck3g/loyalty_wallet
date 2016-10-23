@@ -22,7 +22,9 @@ class DealsController < VendorApplicationController
   private
 
   def deal_params
-    params.require(:deal).permit(:title, :valid_till, :valid_till_hour, :terms_of_service)
+    params.require(:deal).permit(
+      :title, :valid_from, :valid_from_hour, :valid_till, :valid_till_hour, :terms_of_service
+    )
   end
 
   def redirect_to_active_deal
