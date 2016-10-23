@@ -35,4 +35,8 @@ module ApplicationHelper
       deal.valid_till.to_s(:short)
     ].join(" - ")
   end
+
+  def show_qr_code_message
+    "Show your QR code to a vendor, who accepts Loyalty Wallet."
+  end
 end

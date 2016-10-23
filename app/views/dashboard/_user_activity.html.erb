@@ -1,16 +1,14 @@
 <div class="row">
-  <% if !dashboard.recent_activity.any? %>
-    <div class="empty-message">
-      There is no activity yet.
-    </div>
-  <% end %>
-
-  <% dashboard.recent_activity.each do |activity| %>
-    <%=
-      render 'activities/activity_tile',
-        title: activity.vendor_name,
-        current_count: current_stamps_count(activity.total_vendor_stamps(till_date: activity.created_at)),
-        date: "#{time_ago_in_words(activity.created_at)} ago"
-    %>
+  <% if dashboard.recent_activity.any? %>
+    <% dashboard.recent_activity.each do |activity| %>
+      <%=
+        render 'activities/activity_tile',
+          title: activity.vendor_name,
+          current_count: current_stamps_count(activity.total_vendor_stamps(till_date: activity.created_at)),
+          date: "#{time_ago_in_words(activity.created_at)} ago"
+        %>
+    <% end %>
+  <% else %>
+    <div class="empty-message text-center"><%= show_qr_code_message %></div>
   <% end %>
 </div>

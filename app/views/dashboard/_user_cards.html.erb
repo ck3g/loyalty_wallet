@@ -1,16 +1,14 @@
 <div class="row">
-  <% if !dashboard.my_cards.any? %>
-    <div class="empty-message">
-      You have no cards yet.
-    </div>
-  <% end %>
-
-  <% dashboard.my_cards.each do |vendor| %>
-    <%=
-      render 'activities/activity_tile',
-        title: vendor.name,
-        current_count: current_stamps_count(vendor.total_stamps_count(current_user)),
-        date: ""
-    %>
+  <% if dashboard.my_cards.any? %>
+    <% dashboard.my_cards.each do |vendor| %>
+      <%=
+        render 'activities/activity_tile',
+          title: vendor.name,
+          current_count: current_stamps_count(vendor.total_stamps_count(current_user)),
+          date: ""
+        %>
+    <% end %>
+  <% else %>
+    <div class="empty-message text-center"><%= show_qr_code_message %></div>
   <% end %>
 </div>
