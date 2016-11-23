@@ -33,7 +33,7 @@ class UserDashboard
 
   def qr_code_uri
     # TODO: get rid of hardcoded stuff
-    "http://loyaltywallet.2016.rubyrampage.com/users/#{user.id}/put-stamp"
+    "https://loyalty-wallet.herokuapp.com/users/#{user.id}/put-stamp"
   end
 
   def visited_vendors_ids

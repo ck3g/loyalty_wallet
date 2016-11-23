@@ -61,7 +61,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options = { host: 'loyaltywallet.2016.rubyrampage.com' }
+  config.action_mailer.default_url_options = { host: 'loyalty-wallet.herokuapp.com' }
   config.action_mailer.smtp_settings = {
     address: 'smtp.sendgrid.net',
     port: 587,
@@ -69,7 +69,7 @@ Rails.application.configure do
     authentication: :plain,
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
-    domain: 'loyaltywallet.2016.rubyrampage.com'
+    domain: 'loyalty-wallet.herokuapp.com'
   }
   config.action_mailer.delivery_method = :smtp
 
